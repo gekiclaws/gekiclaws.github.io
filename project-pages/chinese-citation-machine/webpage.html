@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Chinese Citation Machine</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+
+	<body>
+		<div class="form-style-10">
+		<h1>中文引文註釋器<span>Chinese Citation Machine</span></h1>
+		<form>
+		    <div class="section"><span>1</span>要註釋什麼</div>
+		    <div class="inner-wrap">
+		        <label>標題 <input type="text" name="field1" id="title"/></label>
+		    </div>
+
+		    <div class="section"><span>2</span>貢獻者</div>
+		    <div class="inner-wrap">
+		        <label>作者 1 <input type="text" name="field3" id="author1"/></label>
+		        <label>作者 2（如有） <input type="text" name="field4" id="author2"/></label>
+		    </div>
+
+		    <div class="section"><span>3</span>網上編輯信息</div>
+		        <div class="inner-wrap">
+		        <label>網站名稱 <input type="text" name="field5" id="website-name"/></label>
+		        <label>出版社 <input type="text" name="field6" id="publisher"/></label>
+		        <label>網址 <input type="text" name="field6" id="url"/></label>
+		        <label>出版日期（年/月/日） <input type="text" name="field6" id="date"/></label>
+		    </div>
+		    <div class="button-section">
+		     <input type="button" value="註釋！" onclick="cite()"/>
+		    </div>
+		    <div class="section"><span>&nbsp&nbsp</span>引文註釋</div>
+		        <div class="inner-wrap" id="citationwrap">
+		        <label id="citation"></label>
+		    </div>
+		</form>
+		</div>
+	</body>
+</html>
