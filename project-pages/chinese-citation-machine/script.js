@@ -9,16 +9,65 @@ function cite(){
 	var url = document.getElementById("url").value;
 	var date = document.getElementById("date").value;
 
-	// Data Processing
-	var citation = author1; 
-	if (author2 != ""){
-		citation = citation+"及"+author2;
+	// Data Processing 1
+	var data = [title, website_name, publisher, date, url];
+	var citation = ""; 
+
+	for (i = 0; i < data.length; i++){
+		if (data[i] != ""){
+			if (i == 0){
+				citation = "〈"+data[i]+"〉";
+			}
+
+			else{
+				if (i == 1){
+					if (data[0] == ""){
+						citation = "《"+data[i]+"》";
+					}
+					else{
+						citation = citation+"，《"+data[i]+"》";
+					}
+				}
+				else{
+					var done = false;
+					for (x = 0; x < i; x++){
+						if (data[x] != ""){
+							citation = citation+"，"+data[i];
+							done = true;
+							break;
+						}
+					}
+					if (done == false){
+						citation = data[i];
+					}
+				}
+			}
+		}
 	}
-	citation = citation+"：〈"+title+"〉";
-	citation = citation+"，《"+website_name+"》";
-	citation = citation+"，"+publisher;
-	citation = citation+"，"+date;
-	citation = citation+"，"+url+"。";
+
+	citation += "。";
+
+	// Data Processing 2
+	if (citation == "。"){
+		if (author1 != ""){
+			if (author2 != ""){
+				citation = author1+"及"+author2+citation;
+			}
+			else{
+				citation = author1 +citation;
+			}
+		}
+	}
+	else{
+		if (author1 != ""){
+			if (author2 != ""){
+				citation = author1+"及"+author2+"："+citation;
+			}
+			else{
+				citation = author1 + "：" + citation;
+			};
+		}
+	}
 
 	// Presentation
 	document.getElementById("citation").innerHTML = citation;
