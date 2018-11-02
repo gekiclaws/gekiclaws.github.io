@@ -7,10 +7,40 @@ function cite(){
 	var website_name = document.getElementById("website-name").value;
 	var publisher = document.getElementById("publisher").value;
 	var url = document.getElementById("url").value;
-	var date = document.getElementById("date").value;
 
-	// Data Processing 1
-	var data = [title, website_name, publisher, date, url];
+	var year1 = document.getElementById("year1").value;
+	var month1 = document.getElementById("month1").value;
+	var day1 = document.getElementById("day1").value;
+
+	var year2 = document.getElementById("year2").value;
+	var month2 = document.getElementById("month2").value;
+	var day2 = document.getElementById("day2").value;
+
+	// Data Processing 1 (date)
+	var date1 = ""
+	if (year1 != ""){
+		date1 += year1;
+	}
+	if (month1 != ""){
+		date1 += month1;
+	}
+	if (year1 != ""){
+		date1 += day1;
+	}
+
+	var date2 = ""
+	if (year2 != ""){
+		date2 += year2;
+	}
+	if (month2 != ""){
+		date2 += month2;
+	}
+	if (year2 != ""){
+		date2 += day2;
+	}
+
+	// Data Processing 2 (right part)
+	var data = [title, website_name, publisher, date1, url, date2];
 	var citation = ""; 
 
 	for (i = 0; i < data.length; i++){
@@ -20,26 +50,16 @@ function cite(){
 			}
 
 			else{
-				if (i == 1){
-					if (data[0] == ""){
-						citation = "《"+data[i]+"》";
-					}
-					else{
-						citation = citation+"，《"+data[i]+"》";
+				var done = false;
+				for (x = 0; x < i; x++){
+					if (data[x] != ""){
+						citation = citation+"，"+data[i];
+						done = true;
+						break;
 					}
 				}
-				else{
-					var done = false;
-					for (x = 0; x < i; x++){
-						if (data[x] != ""){
-							citation = citation+"，"+data[i];
-							done = true;
-							break;
-						}
-					}
-					if (done == false){
-						citation = data[i];
-					}
+				if (done == false){
+					citation = data[i];
 				}
 			}
 		}
@@ -47,7 +67,7 @@ function cite(){
 
 	citation += "。";
 
-	// Data Processing 2
+	// Data Processing 3 (left part)
 	if (citation == "。"){
 		if (author1 != ""){
 			if (author2 != ""){
@@ -79,5 +99,10 @@ function cite(){
 	document.getElementById("website-name").value = "";
 	document.getElementById("publisher").value = "";
 	document.getElementById("url").value = "";
-	document.getElementById("date").value = "";
+	document.getElementById("year1").value = "";
+	document.getElementById("month1").value = "";
+	document.getElementById("day1").value = "";
+	document.getElementById("year2").value = "";
+	document.getElementById("month2").value = "";
+	document.getElementById("day2").value = "";
 }

@@ -137,3 +137,11 @@ body{
 .form-style-10 label[id="citation"]{
 	font-size: 15px;
 }
+
+.form-style-10 div[id="date"]{
+	display: flex;
+}
+
+.form-style-10 select{
+	height: 40px;
+}
