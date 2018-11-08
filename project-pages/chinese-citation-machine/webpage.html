@@ -5,29 +5,44 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Chinese Citation Machine</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript" src="analysis.js"></script>
+		<script type="text/javascript" src="screen-changer.js"></script>
 	</head>
 
 	<body>
-		<div class="form-style-10">
+		<div class="form-style-10" style="margin-bottom: 10px;">
 		<h1>中文引文註釋器<span>Chinese Citation Machine</span></h1>
 		<form>
-		    <div class="section"><span>1</span>要註釋什麼</div>
+			<div class="section"><span>1</span></div>
 		    <div class="inner-wrap">
-		        <label>標題 <input type="text" name="field1" id="title"/></label>
+		        <label id="select_type">要註釋什麼？</label>
+		        <select id="selection" onchange="ChangeScreen()">
+	        		<option value="website">網頁</option>
+					<option value="book">圖書</option>
+	        	</select>
 		    </div>
 
-		    <div class="section"><span>2</span>貢獻者</div>
+		    <div class="section"><span>2</span></div>
 		    <div class="inner-wrap">
-		        <label>作者 1 <input type="text" name="field3" id="author1"/></label>
-		        <label>作者 2（如有） <input type="text" name="field4" id="author2"/></label>
+		        <label id="title_input">標題</label>
+		        <input type="text" name="field1" id="title"/>
 		    </div>
 
-		    <div class="section"><span>3</span>網上編輯信息</div>
+		    <div class="section"><span>3</span></div>
+		    <div class="inner-wrap">
+		        <label>作者 1</label>
+		        <input type="text" name="field3" id="author1"/>
+		        <label>作者 2（如有） </label>
+		        <input type="text" name="field4" id="author2"/>
+		    </div>
+
+		    <div class="section"><span>4</span></div>
 		        <div class="inner-wrap">
-		        <label>網站名稱 <input type="text" name="field5" id="website-name"/></label>
-		        <label>出版社 <input type="text" name="field6" id="publisher"/></label>
-		        <label>出版日期（年/月/日）
+		        <label id="webName_input">網站名稱</label>
+		        <input type="text" name="field5" id="website-name"/>
+		        <label>出版社</label>
+		        <input type="text" name="field6" id="publisher"/>
+		        <label>出版日期（年/月/日）</label>
 		        	<div id="date">
 			        	<select id="year1">
 			        		<option value=""></option>
@@ -196,10 +211,10 @@
 			        		<option value="31日">31日</option>
 			        	</select>
 		        	</div>
-		        </label>
-		        <label>網址 <input type="text" name="field6" id="url"/></label>
-		        <label>使用日期（年/月/日）
-		        	<div id="date">
+		        <label id="weblink_input">網址</label>
+		        <input type="text" name="field6" id="url"/>
+		        <label id="useDate_input">使用日期（年/月/日）</label>
+		        	<div id="date" id="use_date">
 			        	<select id="year2">
 			        		<option value=""></option>
 							<option value="2018年">2018年</option>
@@ -367,7 +382,6 @@
 			        		<option value="31日">31日</option>
 			        	</select>
 		        	</div>
-		        </label>
 		    </div>
 		    <div class="button-section">
 		     <input type="button" value="註釋！" onclick="cite()"/>
@@ -378,5 +392,8 @@
 		    </div>
 		</form>
 		</div>
+		<div style="text-align: center; margin: 20px 0px;">
+	    	<label>Copyright © 2018 Matthew Wong. All rights reserved.</label>
+	    </div>
 	</body>
 </html>

@@ -31,6 +31,14 @@ body{
 	margin-bottom: 0px;
 }
 
+.form-style-10 input[id="author1"],
+.form-style-10 input[id="website-name"],
+.form-style-10 input[id="publisher"],
+.form-style-10 input[id="url"],
+.form-style-10 div[id="date"]{
+	margin: 0 0 2vh 0;
+}
+
 .form-style-10 h1{
 	background: #2A88AD;
 	padding: 20px 30px 15px 30px;
@@ -144,4 +152,8 @@ body{
 
 .form-style-10 select{
 	height: 40px;
+}
+
+.form-style-10 select[id="selection"]{
+	font-size: 15px;
 }

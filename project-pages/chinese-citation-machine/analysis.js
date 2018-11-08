@@ -16,6 +16,8 @@ function cite(){
 	var month2 = document.getElementById("month2").value;
 	var day2 = document.getElementById("day2").value;
 
+	var type = document.getElementById("selection").value;
+
 	// Data Processing 1 (date)
 	var date1 = ""
 	if (year1 != ""){
@@ -45,8 +47,17 @@ function cite(){
 
 	for (i = 0; i < data.length; i++){
 		if (data[i] != ""){
-			if (i == 0){
+			if (i == 0){ // title
 				citation = "〈"+data[i]+"〉";
+			}
+
+			else if (i == 1 & type == "book"){ // webname / bookname
+				if (data[0] != ''){
+					citation += "，《"+data[i]+"》";
+				}
+				else{
+					citation += "《"+data[i]+"》";
+				}
 			}
 
 			else{
@@ -62,6 +73,7 @@ function cite(){
 					citation = data[i];
 				}
 			}
+			console.log(citation);
 		}
 	}
 
