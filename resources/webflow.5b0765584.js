@@ -732,7 +732,7 @@
 			textDecoration: 'none'
 		});
 
-		$branding.text('Copyright © 2018 Matthew Wong');
+		$branding.text('Copyright © 2019 Matthew Wong');
 		$link.append($branding);
 		$body.append($link);
 
