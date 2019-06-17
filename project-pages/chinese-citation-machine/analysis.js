@@ -19,29 +19,41 @@ function cite(){
 	var type = document.getElementById("selection").value;
 
 	// Data Processing 1 (date)
-	var date1 = ""
+	var date1 = "";
 	if (year1 != ""){
 		date1 += year1;
 	}
 	if (month1 != ""){
 		date1 += month1;
 	}
-	if (year1 != ""){
+	if (month1 != ""){
 		date1 += day1;
 	}
 
-	var date2 = ""
+	var date2 = "";
 	if (year2 != ""){
 		date2 += year2;
 	}
 	if (month2 != ""){
 		date2 += month2;
 	}
-	if (year2 != ""){
+	if (month2 != ""){
 		date2 += day2;
 	}
 
-	// Data Processing 2 (right part)
+	// Data Processing 2 (url)
+	if (url != ""){
+		var http = url.includes("http://");
+		var https = url.includes("https://");
+		if(http){
+			url = url.slice(7);
+		}
+		else if(https){
+			url = url.slice(8);
+		}
+	}
+
+	// Data Processing 3 (right part)
 	var data = [title, website_name, publisher, date1, url, date2];
 	var citation = ""; 
 
@@ -79,7 +91,7 @@ function cite(){
 
 	citation += "。";
 
-	// Data Processing 3 (left part)
+	// Data Processing 4 (left part)
 	if (citation == "。"){
 		if (author1 != ""){
 			if (author2 != ""){
