@@ -47,5 +47,11 @@ function ChangeScreen(){
 	}
 }
 
+var yr = new Date()
+
+window.onload = function(){
+   document.getElementById("yeardate").innerHTML="Copyright © "+yr.getFullYear()+" Matthew Wong. All rights reserved.";
+} 
+
 /*
 */
