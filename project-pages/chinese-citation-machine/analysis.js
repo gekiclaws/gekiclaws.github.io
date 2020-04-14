@@ -42,7 +42,7 @@ function cite(){
 	}
 
 	// Data Processing 2 (url)
-	if (url != "") url = tabURL.replace(/^https?:\/\//,'');
+	if (url != "") url = url.replace(/^https?:\/\//,'');
 
 	// Data Processing 3 (right part)
 	var data = [title, website_name, publisher, date1, url, date2];
