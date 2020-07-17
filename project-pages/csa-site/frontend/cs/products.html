@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>China Search</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../website_icon.jpg">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="product_slideshow.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+            <img src="../logo.png" width="270" height="80" class="d-inline-block align-top" alt="">
+        </a>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">主页</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about_baidu.html">关于百度</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="products.html">百度产品<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                关于我们
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="about_us.html">公司简介</a>
+                <a class="dropdown-item" href="contact.html">联络我们</a>
+                <a class="dropdown-item" href="clients.html">我们的客户</a>
+                <a class="dropdown-item" href="join.html">加入我们</a>
+              </div>
+            </li>
+          </ul>
+          <div class="dropdown-divider"></div>
+          <ul class="navbar-nav mr-sm-2">
+            <li class="nav-item">
+                <a class="nav-link" href="#">English</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">繁體</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">简体<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <div class="container-liquid banner mb-4" id="main-banner">
+        <p class="h1 page-title">百度产品</p>
+    </div>
+
+    <div class="slideshow">
+      <div style='text-align: center;'>
+        <span class="dot" onclick='currentSlide(1)'><p class="h5 label">开屏广告</p></span>
+        <span class="dot" onclick='currentSlide(2)'><p class="h5 label">信息流广告</p></span>
+        <span class="dot" onclick='currentSlide(3)'><p class="h5 label">搜索广告</p></span>
+        <span class="dot" onclick='currentSlide(4)'><p class="h5 label">品专产品</p></span>
+        <span class="dot" onclick='currentSlide(5)'><p class="h5 label">地图国际资源</p></span>
+      </div>
+      <br/>
+      <div class="slideshow-container">
+        <div class="slideshow-inner">
+          <!-- <div class="mySlides fade">
+            <div class="container row text-center text-md-left ml-1 ml-md-5" height="10em"> 
+              <div class="col-12 col-md-5 my-auto h-100">
+                  <p class="h1 pt-4 pt-md-0">百度APP开屏</p>
+                  <p class="text-black">开屏资源位置是APP启动第一入口, 必经之路, 能够抓住用户第一眼的注意力, 曝光时间3-5秒, 覆盖海量用户, 强势品效合一。</p>
+              </div>
+              <div class="col-12 col-md-7 d-flex justify-content-center h-100">
+                  <img src="./images/products/product1/image1.jpg" class="img-fluid d-inline-block align-top w-75">
+              </div>
+            </div>
+            <div class="container pt-1 pt-md-0 text-center">
+              <h3 class="subtitle text-dark">在百度APP, 您可以选择以下开屏类广告样式</h3>
+              <img class="img-fluid" src="./images/products/product1/image2.jpg" width="100%">
+              <a href="http://yingxiao.baidu.com/new/topic/626/index?ly=ZYbaiduapp" role="button" class="btn btn-primary">查看更多开屏实例</a>
+            </div>
+            <div class="container pt-1 pt-md-0 text-center">
+              <h3 class="subtitle text-dark">定向方式</h3>
+              <h4 class="text-secondary"><span class="text-primary">200亿+</span>用户行为线索数据, 丰富的定向方式,帮您找到更多精准的目标用户</h4>
+              <img class="img-fluid" src="./images/products/product1/image3.jpg" width="100%">
+            </div>
+            <div class="text-center">
+              <h3 class="subtitle text-dark">您可以选择以下方式购买</h3>
+              <div class="row ml-n3 ml-md-0" height="10em">  
+                <div class="col-12 col-md-6 d-flex justify-content-center h-100">
+                    <img src="./images/products/product1/image5_a.jpg" class="img-fluid d-inline-block align-top w-100">
+                </div>
+                <div class="col-12 col-md-6 d-flex justify-content-center h-100">
+                    <img src="./images/products/product1/image5_b.jpg" class="img-fluid d-inline-block align-top w-100">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="container row text-center text-md-left ml-0 ml-md-5" height="10em"> 
+              <div class="col-12 col-md-5 my-auto h-100">
+                  <p class="h1 pt-4 pt-md-0 pb-2">百度信息流广告</p>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col">
+                          <span class="h3 text-primary">2亿</span><br>
+                          百度APP日活用戶量
+                        </div>
+                        <div class="col">
+                          <span class="h3 text-primary">150亿+</span><br>
+                          日均信息流推荐流量
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">您的广告可以展现在推荐, 小说, 体育等频道的信息流中及文章详情页中间, 底部等位置展现</li>
+                </ul>
+              </div>
+              <div class="col-12 col-md-7 d-flex justify-content-center h-100">
+                  <img src="./images/products/product2/image1.jpg" class="img-fluid d-inline-block align-top w-75">
+              </div>
+            </div>
+            <div id="carouselExampleIndicators" class="carousel slide mt-4" data-interval="false">
+              <ol class="carousel-indicators h4">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                  <p class="my-auto">基础样式</p>
+                </li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1">
+                  <p class="my-auto">创新样式</p>
+                </li>
+              </ol>
+              <div class="carousel-inner pt-5">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="./images/products/product2/image2_a.png">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./images/products/product2/image2_b.png">
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="subtitle text-dark">您可以按以下方式购买</h3>
+              <div class="row ml-n3 ml-md-0" >  
+                <div class="col-12 col-md-5 d-flex justify-content-center h-100">
+                    <img src="./images/products/product2/image3_a.jpg" class="img-fluid d-inline-block align-top w-100">
+                </div>
+                <div class="col-12 col-md-7 d-flex justify-content-center h-100">
+                    <img src="./images/products/product2/image3_b.jpg" class="img-fluid d-inline-block align-top w-100">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="container row text-center text-md-left ml-0 ml-md-5" height="10em"> 
+              <div class="col-12 col-md-5 my-auto h-100">
+                  <p class="h1 pt-4 pt-md-0 pb-2">百度搜索广告</p>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col">
+                          <span class="h3 text-primary">2亿</span><br>
+                          百度APP日活用戶量
+                        </div>
+                        <div class="col">
+                          <span class="h3 text-primary">60亿+</span><br>
+                          每日搜索响应量
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">搜索推广基于全球最大的中文搜索引擎百度搜索, 
+                      在搜索结果显著的位置展示您的推广信息. 只有客户点击广告之后, 您才需要付费</li>
+                </ul>
+              </div>
+              <div class="col-12 col-md-7 d-flex justify-content-center h-100">
+                  <img src="./images/products/product3/image1.jpg" class="img-fluid d-inline-block align-top w-75">
+              </div>
+            </div>
+            <div class="container text-center">
+              <h4 class="subtitle text-primary">多創意管理投放素材, 多樣式疊加拼裝, 擴大展現邊界, 突破創意局限</h4>
+              <img class="img-fluid mt-1" src="./images/products/product3/image2_a.jpg" width="100%">
+
+              <h3 class="subtitle text-dark">您可以選擇以下广告样式</h3>
+              <div class="row ml-n3 ml-md-0" >  
+                <div class="col-12 col-md-4 d-flex justify-content-center h-100">
+                    <img src="./images/products/product3/image2_b1.jpg" class="img-fluid d-inline-block align-top w-100">
+                </div>
+                <div class="col-12 col-md-4 d-flex justify-content-center h-100">
+                    <img src="./images/products/product3/image2_b2.jpg" class="img-fluid d-inline-block align-top w-100">
+                </div>
+                <div class="col-12 col-md-4 d-flex justify-content-center h-100">
+                  <img src="./images/products/product3/image2_b3.jpg" class="img-fluid d-inline-block align-top w-100">
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="subtitle text-dark">您可以选择以下方式购买</h3>
+              <div class="row ml-n3 ml-md-0" >  
+                <div class="col-12 col-md-6 d-flex justify-content-center h-100">
+                    <img src="./images/products/product3/image3_a.jpg" class="img-fluid d-inline-block align-top w-100">
+                </div>
+                <div class="col-12 col-md-6 d-flex justify-content-center h-100">
+                    <img src="./images/products/product3/image3_b.jpg" class="img-fluid d-inline-block align-top w-100">
+                </div>
+            </div>
+          </div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="container row text-center text-md-left ml-1 ml-md-5" height="10em"> 
+              <div class="col-12 col-md-5 my-auto h-100">
+                  <p class="h1 pt-4 pt-md-0">百度品牌专区产品</p>
+                  <p class="text-black">品专矩阵聚焦全网品牌搜索关注度，打造品牌全场景营销服务阵地，满足广告主多种营销诉求，加速缩短从认知到转化的路径。</p>
+              </div>
+              <div class="col-12 col-md-7 d-flex justify-content-center h-100">
+                  <img src="./images/products/product4/banner.jpg" class="img-fluid d-inline-block align-top w-75">
+              </div>
+            </div>
+            <div class="container pt-1 pt-md-0 text-center">
+              <h3 class="subtitle text-dark">时效, 炫动的品专 -- 助节日活动推销</h3>
+              <img class="img-fluid mt-n3" src="./images/products/product4/image1.jpg" width="100%">
+              <a href="" role="button" class="btn btn-primary">查看更多品牌詞实例</a>
+            </div>
+            <div class="container pt-1 pt-md-0 text-center">
+              <h3 class="subtitle text-dark">品牌MAX : 滿足廣告主的多種訴求</h3>
+              <h4 class="text-secondary mb-4">拥有<span class="text-primary">巨幕展示</span>, <span class="text-primary">品牌独占</span>, 并<span class="text-primary">提高竟品防御能力</span></h4>
+              <img class="img-fluid" src="./images/products/product4/image2.jpg" width="100%">
+            </div>
+            <div class="container pt-1 pt-md-2 text-center">
+              <h3 class="subtitle text-dark">品专分行業</h3>
+              <img class="img-fluid mt-n3" src="./images/products/product4/image3.jpg" width="100%">
+              <a href="" role="button" class="btn btn-primary">查看更多大头图实例</a>
+            </div>
+            <div class="text-center">
+              <h3 class="subtitle text-dark">您可以选择购买以下品专产品</h3>
+              <img class="img-fluid mt-2" src="./images/products/product4/image4.jpg" width="100%">
+            </div>
+          </div> -->
+
+          <div class="mySlides fade">
+            <div class="container row text-center text-md-left ml-1 ml-md-5" height="10em"> 
+              <div class="col-12 col-md-5 my-auto h-100">
+                  <p class="h1 pt-4 pt-md-0">百度地图国际资源</p>
+                  <p class="text-black">Lorem ipsum</p>
+              </div>
+              <div class="col-12 col-md-7 d-flex justify-content-center h-100">
+                  <img src="./images/products/product5/banner.jpg" class="img-fluid d-inline-block align-top w-75">
+              </div>
+            </div>
+            <div class="container pt-1 pt-md-0 text-center">
+              <h3 class="subtitle text-dark">在百度地图, 您可以选择以下广告样式</h3>
+              <div class="container-liquid row">
+                <div class="card col-6 col-md-3">
+                    <img class="card-img-top" src="./images/products/product5/image1_a.png">
+                    <div class="card-body">
+                        <h4 class="card-title">大型景区图</h4>
+                        <p class="card-text">丰富的底图元素</p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3">
+                    <img class="card-img-top" src="./images/products/product5/image1_b.png">
+                    <div class="card-body">
+                        <h4 class="card-title">品牌动态图</h4>
+                        <p class="card-text">基于品牌词检索触发</p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3">
+                    <img class="card-img-top" src="./images/products/product5/image1_c.png">
+                    <div class="card-body">
+                        <h4 class="card-title">底图红字</h4>
+                        <p class="card-text">检索词触发，仅飘红字体</p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3">
+                  <img class="card-img-top" src="./images/products/product5/image1_d.png">
+                  <div class="card-body">
+                      <h4 class="card-title">空框SUG页-文字</h4>
+                      <p class="card-text"></p>
+                  </div>
+              </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="subtitle text-dark">您可以选择购买以下产品</h3>
+              <img class="img-fluid mt-2" src="./images/products/product4/image4.jpg" width="100%">
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+    <footer class="page-footer font-small bg-light mt-3">
+        <div class="container footer-copyright text-center py-3">© 2020 Copyright 中国搜索（亚洲）有限公司版权所有
+        </div>
+    </footer>
+</body>
+
+</html>

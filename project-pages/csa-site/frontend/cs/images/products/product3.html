@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>China Search</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../../website_icon.jpg">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="carousel2.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="../../logo.png" width="270" height="80" class="d-inline-block align-top" alt="">
+        </a>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">主页</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../about_baidu.html">关于百度</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="../products.html">百度产品<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                关于我们
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../about_us.html">公司简介</a>
+                <a class="dropdown-item" href="../contact.html">联络我们</a>
+                <a class="dropdown-item" href="../clients.html">我们的客户</a>
+                <a class="dropdown-item" href="../join.html">加入我们</a>
+              </div>
+            </li>
+          </ul>
+          <div class="dropdown-divider"></div>
+          <ul class="navbar-nav mr-sm-2">
+            <li class="nav-item">
+                <a class="nav-link" href="#">English</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">繁體</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">简体<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <div class="banner mb-n1" id="product-banner">
+        <div class="container row d-flex align-items-center mx-auto">
+            <div class="col-12 col-md-4">
+                <p class="h1 product-title pt-4 pt-md-0">开屏产品</p>
+                <p class="text-white">围绕超级APP，搭建的百度开屏产品矩阵，布局百度超3亿级流量入口，覆盖用户24小时工作生活时长，
+                    基于大数据赋能和意图营销，支持多种创新投放样式和定向能力。</p>
+            </div>
+            <div class="col-12 col-md-8">
+                <img src="./images/product3/banner.png" width="100%" class="d-inline-block align-top">
+            </div>
+        </div>
+    </div>
+
+    <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="6000">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+            <li data-target="#carousel" data-slide-to="3"></li>
+            <li data-target="#carousel" data-slide-to="4"></li>
+            <li data-target="#carousel" data-slide-to="5"></li>
+            <li data-target="#carousel" data-slide-to="6"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <picture>
+                    <source srcset="./images/product3/type1_wide.jpg" media="(min-width: 769px)">
+                    <img src="./images/product3/type1.png" class="d-block img-fluid">
+                </picture>
+                <div class="carousel-caption text-dark text-md-left ml-n5 ">
+                    <p class="h4 text-responsive ml-n3 pt-md-3">支持多种投放样式，满足广告主不同推广需求</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <picture>
+                    <source srcset="./images/product3/type2_wide.jpg" media="(min-width: 769px)">
+                    <img src="./images/product3/type2.jpg" class="d-block img-fluid">
+                </picture>
+                <div class="carousel-caption text-dark text-md-left">
+                    <p class="h2 text-responsive pt-md-4">利用百度AI技术,提升用乎产品体验</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <picture>
+                    <source srcset="./images/product3/type3_wide.jpg" media="(min-width: 769px)">
+                    <img src="./images/product3/type3.png" class="d-block img-fluid">
+                </picture>
+
+                <div class="carousel-caption text-dark text-md-left">
+                    <p class="h2 text-responsive pt-md-4">开屏Always</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <picture>
+                    <source srcset="./images/product3/type4_wide.jpg" media="(min-width: 769px)">
+                    <img src="./images/product3/type4.png" class="d-block img-fluid">
+                </picture>
+                <div class="carousel-caption text-dark text-md-left">
+                    <p class="h2 text-responsive pt-md-4">开屏&Feed</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <picture>
+                    <source srcset="./images/product3/type5_wide.jpg" media="(min-width: 769px)">
+                    <img src="./images/product3/type5.png" class="d-block img-fluid">
+                </picture>
+                <div class="carousel-caption text-dark text-md-left">
+                    <p class="h2 text-responsive pt-md-4">开屏Impact视频联播</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <picture>
+                    <source srcset="./images/product3/type6_wide.jpg" media="(min-width: 769px)">
+                    <img src="./images/product3/type6.png" class="d-block img-fluid">
+                </picture>
+                <div class="carousel-caption text-dark text-md-left">
+                    <p class="h2 text-responsive pt-md-4">开屏Impact普通联动</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <picture>
+                    <source srcset="./images/product3/type7_wide.jpg" media="(min-width: 769px)">
+                    <img src="./images/product3/type7.png" class="d-block img-fluid">
+                </picture>
+                <div class="carousel-caption text-dark text-md-left">
+                    <p class="h2 text-responsive pt-md-4">开屏AI智投</p>
+                </div>
+            </div>
+        </div>
+        <!-- /.carousel-inner -->
+        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="container pt-1 pt-md-0 pb-4">
+        <h3 class="subtitle text-responsive text-dark">百度开屏支持广告样式</h3>
+        <img class="img-fluid pt-4" src="./images/product3/info1.png" width="100%">
+    </div>
+
+    <footer class="page-footer font-small bg-light">
+        <div class="container footer-copyright text-center py-3">© 2020 Copyright 中国搜索（亚洲）有限公司版权所有
+        </div>
+    </footer>
+
+</body>
