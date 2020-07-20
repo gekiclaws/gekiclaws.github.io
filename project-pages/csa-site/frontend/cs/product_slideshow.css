@@ -68,6 +68,32 @@
   border-radius: 45%;
   color: white;
 }
+
+.carousel-indicators li.active,
+.carousel-indicators li:hover{
+  background-color: #007bff;
+}
+
+#baidu-carousel ol li{
+  background-color: darkgrey;
+  height: 0.25em;
+  width: 7em;
+  padding: 0em;
+  margin: 0 2em;
+  border-radius: 0%;
+  color: white;
+}
+
+#baidu-carousel ol li p{
+  margin-top: -1.5em;
+  text-align: center;
+}
+
+#baidu-carousel .carousel-indicators li.active,
+#baidu-carousel .carousel-indicators li:hover{
+  background-color: white;
+}
+
 @media (max-width: 768px){
   .carousel-indicators li{
     font-size: 5vw;
@@ -80,15 +106,15 @@
   #p4-carousel .carousel-inner{
     padding-top: 2em!important;
   }
+  #baidu-carousel ol li{
+    margin: 0 0.5em;
+  }
+  #baidu-carousel ol li p{
+    font-size: 1.5rem!important;
+  }
 }
 @media (min-width: 768px){
   #p2-carousel .carousel-inner{
     padding-top: 5em!important;
   }
-}
-
-
-.carousel-indicators li.active,
-.carousel-indicators li:hover{
-  background-color: #007bff;
 }
