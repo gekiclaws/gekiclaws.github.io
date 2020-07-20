@@ -73,10 +73,20 @@
     font-size: 5vw;
     margin: 0 0.5em;
   }
-  .carousel-inner{
+  #p4-carousel ol li{
+    font-size: 4vw;
+    margin: 0 0.5em;
+  }
+  #p4-carousel .carousel-inner{
+    padding-top: 2em!important;
+  }
+}
+@media (min-width: 768px){
+  #p2-carousel .carousel-inner{
     padding-top: 5em!important;
   }
 }
+
 
 .carousel-indicators li.active,
 .carousel-indicators li:hover{
