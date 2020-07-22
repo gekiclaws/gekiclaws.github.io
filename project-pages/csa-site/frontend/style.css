@@ -64,9 +64,9 @@ h3{
 .company-img{
     height: 10vw;
 }
-@media (max-width: 768px){
+@media (max-width: 576px){
     .company-img{
-        height: 25vh;
+        height: 20vh;
     }
 }
 #index-title{
