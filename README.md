@@ -1,2 +1,2 @@
 # matthewckwong.github.io
-<h2>Welcome to my personal profile!</h2>
+<h2>Welcome to my personal portfolio!</h2>
