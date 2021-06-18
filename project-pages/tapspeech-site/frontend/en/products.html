@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>China Search</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../images/website_icon.jpg">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="text/javascript" src="../script.js"></script>
+    <link rel="stylesheet" href="../product_slideshow.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+            <img src="../images/logo.png" width="270" height="80" class="d-inline-block align-top" alt="">
+        </a>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about_baidu.html">About Baidu</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="products.html">Our Products</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About Us
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="about_us.html">Overview</a>
+                <a class="dropdown-item" href="contact.html">Contact Us</a>
+                <a class="dropdown-item" href="clients.html">Our Clients</a>
+                <a class="dropdown-item" href="join.html">Join Us</a>
+              </div>
+            </li>
+          </ul>
+          <div class="dropdown-divider"></div>
+          <ul class="navbar-nav mr-sm-2">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">English</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../ct/products.html">繁體</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../cs/products.html">简体</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <div class="container-liquid banner mb-4" id="main-banner">
+        <p class="h1 page-title">Our Products</p>
+    </div>
+
+    <div class="slideshow">
+      <div style='text-align: center;'>
+        <span class="dot" onclick='currentSlide(1)'><p class="h5 label">Open-screen ads</p></span>
+        <span class="dot" onclick='currentSlide(2)'><p class="h5 label">Information flow</p></span>
+        <span class="dot" onclick='currentSlide(3)'><p class="h5 label">Search ads</p></span>
+        <span class="dot" onclick='currentSlide(4)'><p class="h5 label">Brand Zone</p></span>
+        <span class="dot" onclick='currentSlide(5)'><p class="h5 label">Local search ads</p></span>
+      </div>
+      <br/>
+      <div class="slideshow-container">
+        <div class="slideshow-inner">
+          <div class="mySlides fade">
+            <div class="container row text-center text-md-left ml-1 ml-md-5" height="10em"> 
+              <div class="col-12 col-md-5 my-auto h-100">
+                  <p class="h1 pt-4 pt-md-0">Open-screen ads</p>
+                  <p class="text-black">Open-screen ads are placed in the homepage of the Baidu app, exposing
+                    your ad to app users for 3-5 seconds and allowing you to effectively capture
+                    the immediate attention and interest of potential customers.</p>
+              </div>
+              <div class="col-12 col-md-7 d-flex justify-content-center h-100">
+                  <img src="../images/products/product1/banner.jpg" class="img-fluid d-inline-block align-top w-75">
+              </div>
+            </div>
+            <div class="container pt-1 pt-md-0 text-center">
+              <h3 class="subtitle text-dark">You may select the following types of open-screen ads to display</h3>
+              <div class="container-liquid row">
+                <div class="card col-4 col-md-2">
+                    <img class="card-img-top" src="../images/products/product1/image1_a.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title p1">Static non-fullscreen ad</h4>
+                        <p class="card-text">Displays for 3s</p>
+                    </div>
+                </div>
+                <div class="card col-4 col-md-2">
+                  <img class="card-img-top" src="../images/products/product1/image1_b.jpg">
+                  <div class="card-body">
+                      <h4 class="card-title p1">Static fullscreen ad</h4>
+                      <p class="card-text">Displays for 3s</p>
+                  </div>
+                </div>
+                <div class="card col-4 col-md-2">
+                  <img class="card-img-top" src="../images/products/product1/image1_c.jpg">
+                  <div class="card-body">
+                      <h4 class="card-title p1">Static non-fullscreen ad</h4>
+                      <p class="card-text">Displays for 5s</p>
+                  </div>
+                </div>
+                <div class="card col-4 col-md-2">
+                  <img class="card-img-top" src="../images/products/product1/image1_d.jpg">
+                  <div class="card-body">
+                      <h4 class="card-title p1">Static fullscreen ad</h4>
+                      <p class="card-text">Displays for 5s</p>
+                  </div>
+                </div>
+                <div class="card col-4 col-md-2">
+                  <img class="card-img-top" src="../images/products/product1/image1_e.jpg">
+                  <div class="card-body">
+                      <h4 class="card-title p1">9 tiles ad</h4>
+                      <p class="card-text">Displays for 5s</p>
+                  </div>
+                </div>
+                <div class="card col-4 col-md-2">
+                  <img class="card-img-top" src="../images/products/product1/image1_f.jpg">
+                  <div class="card-body">
+                      <h4 class="card-title p1">Mobile shake ad</h4>
+                      <p class="card-text">Displays for 5s</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container pt-1 pt-md-0 text-center">
+              <h3 class="subtitle text-dark">Ad positioning</h3>
+              <h4 class="text-secondary">Using the information of<span class="text-primary"> 20+ billion </span>app 
+                users as reference, your ad can be accurately positioned to reach users most likely to become potential customers.</h4>
+              <div class="container-liquid row mx-auto">
+                <div class="col-12 col-md-6">
+                  <img class="img-fluid" src="../images/products/product1/image2_a.jpg" width="100%">
+                </div>
+                <div class="col-12 col-md-6">
+                  <img class="img-fluid" src="../images/products/product1/image2_b.jpg" width="100%">
+                </div>
+              </div>
+            </div>
+            <div class="container pt-1 pt-md-0 mb-5 text-center">
+              <h3 class="subtitle text-dark">Support for open-screen and matrix placement ads allows your 
+                product to achieve large exposure across global brands</h3>
+              <p class="h5 text-primary">Joint investments from various channels can make your brand "famous overnight"</p>
+              <img class="img-fluid my-3" src="../images/products/product1/image3.png" width="100%">
+              <p class="h5 text-primary">Vertical multi-product joint investments enhance the depth of brand communication</p>
+            </div>
+            <div class="container pt-1 pt-md-0 mt-n4 text-center">
+              <h3 class="subtitle text-dark">You may select the following deals</h3>
+              <div class="container row mx-auto mb-md-5">
+                <div class="col-12 col-md-6 h-100 mb-2">
+                  <h4 class="card-title text-center mb-4">Regular purchase</h4>
+                  <div class="container row mx-auto">
+                    <div class="col-6 d-flex justify-content-center h-100 mb-4 mb-md-0">
+                      <div class="row d-flex justify-content-center">
+                        <span class="mb-3"><p class="h3 text-primary">
+                          CPT</p></span><br>
+                        <p class="col-12 card-text">
+                          Pay by time<br>
+                          Non-guaranteed<br>
+                          Only certain channels support targeting</p>
+                      </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center h-100 mb-4 mb-md-0">
+                      <div class="row d-flex justify-content-center">
+                        <span class="mb-3"><p class="h3 text-primary">
+                          CPM</p></span><br>
+                        <p class="col-12 card-text">
+                          Pay per 1000 impressions<br>
+                          Only GD is guaranteed<br>
+                          Supports multi-dimensional targeting</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 h-100 mb-2">
+                  <h4 class="card-title text-center mb-4">Regular sales</h4>
+                  <div class="container row mx-auto">
+                    <div class="col-6 d-flex justify-content-center h-100 mb-4 mb-md-0">
+                      <div class="row d-flex justify-content-center">
+                        <span class="mb-3"><p class="h3 text-primary">
+                          PDB</p></span><br>
+                        <p class="col-12 card-text">
+                          Pay per 1000 impressions<br>
+                          Quantity guaranteed but no return<br>
+                          Supports basic targeting</p>
+                      </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center h-100 mb-4 mb-md-0">
+                      <div class="row d-flex justify-content-center">
+                        <span class="mb-3"><p class="h3 text-primary">
+                          PD</p></span><br>
+                          <p class="col-12 card-text">
+                            Pay per 1000 impressions<br>
+                            Quantity not guaranteed but return allowed<br>
+                            Supports basic targeting</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="container row text-center text-md-left ml-0 ml-md-5" height="10em">
+              <div class="col-12 col-md-5 my-auto h-100">
+                  <p class="h1 pt-4 pt-md-0 pb-2">Information flow advertising</p>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col">
+                          <span class="h3 text-primary">200 million</span><br>
+                          Daily Baidu app users
+                        </div>
+                        <div class="col">
+                          <span class="h3 text-primary">15+ billion</span><br>
+                          Information flow suggestions per day
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      Your ads can be displayed as recommendations in novels or sports channels, 
+                      as well as in the middle or at the bottom of web articles.</li>
+                </ul>
+              </div>
+              <div class="col-12 col-md-7 d-flex justify-content-center h-100">
+                  <img src="../images/products/product2/image1.jpg" class="img-fluid d-inline-block align-top w-75">
+              </div>
+            </div>
+            <div id="p2-carousel" class="carousel slide mt-4" data-interval="false">
+              <ol class="carousel-indicators h4">
+                <li data-target="#p2-carousel" data-slide-to="0" class="active">
+                  <p class="my-auto">Standard</p>
+                </li>
+                <li data-target="#p2-carousel" data-slide-to="1">
+                  <p class="my-auto">Premium</p>
+                </li>
+              </ol>
+              <div class="carousel-inner pt-5">
+                <div class="carousel-item active">
+                  <div class="container row mx-auto mt-3">
+                    <div class="card col-6 col-md-3">
+                        <img class="card-img-top" src="../images/products/product2/image2_a1.jpg">
+                        <div class="card-body">
+                            <h4 class="card-title">Large photo ads</h4>
+                        </div>
+                    </div>
+                    <div class="card col-6 col-md-3">
+                      <img class="card-img-top" src="../images/products/product2/image2_a2.jpg">
+                      <div class="card-body">
+                          <h4 class="card-title">Triple photo ads</h4>
+                      </div>
+                    </div>
+                    <div class="card col-6 col-md-3">
+                      <img class="card-img-top" src="../images/products/product2/image2_a3.jpg">
+                      <div class="card-body">
+                          <h4 class="card-title">Large video ads</h4>
+                      </div>
+                    </div>
+                    <div class="card col-6 col-md-3">
+                      <img class="card-img-top" src="../images/products/product2/image2_a4.jpg">
+                      <div class="card-body">
+                          <h4 class="card-title">Vertical video ads</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item pt-3">
+                  <img class="d-block w-100" src="../images/products/product2/image2_b_en.jpg">
+                </div>
+              </div>
+            </div>
+            <div class="container text-center">
+              <p class="h3 subtitle text-primary">External web traffic supports Baidu's information flow advertisements, 
+                allowing its ads to capture business opportunities across the web</p>
+              <div class="row mx-auto">
+                <div class="col-12 col-md-3 h-100 mb-2">
+                  <p class="h3 card-title text-center mb-4">Three types of web traffic</p>
+                  <div class="container d-flex justify-content-center mx-auto">
+                    <div class="row d-flex justify-content-center">
+                      <img class="col-4 col-md-12 img-fluid d-inline-block align-top" src="../images/products/product2/image4_a1.jpg">
+                      <img class="col-4 col-md-12 img-fluid d-inline-block align-top" src="../images/products/product2/image4_a2.jpg">
+                      <img class="col-4 col-md-12 img-fluid d-inline-block align-top" src="../images/products/product2/image4_a3.jpg">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-9 h-100 mb-2 mt-3 mt-md-0">
+                  <p class="h3 card-title text-center mb-4">Two resource types</p>
+                  <div class="container row mx-auto">
+                    <div class="col-6 d-flex justify-content-center h-100 ">
+                      <div class="row d-flex justify-content-center">
+                        <p class="col-12 h4 card-title mb-4">Baidu's own traffic</p>
+                        <img src="../images/products/product2/image4_b1.jpg" class="img-fluid d-inline-block mb-3">
+                      </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center h-100">
+                      <div class="row d-flex justify-content-center">
+                        <p class="col-12 h4 card-title">External traffic</p>
+                        <img src="../images/products/product2/image4_b2.jpg" class="w-75 d-inline-block align-top mb-3">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="subtitle text-dark">You may select to buy the following plans</h3>
+              <div class="container row mx-auto mb-md-5">
+                <div class="col-12 col-md-5 h-100 mb-2">
+                  <h4 class="card-title text-center mb-4">Information flow ads</h4>
+                  <div class="container d-flex justify-content-center mx-auto">
+                    <div class="row d-flex justify-content-center">
+                      <img src="../images/products/product2/image3_a.jpg" class="img-fluid d-inline-block align-top mb-2" width="30%">
+                      <p class="col-12 h4 card-title text-primary">Performance advertising</p>
+                      <p class="col-12 card-text">CPC pay by clicks, oCPX, etc.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-7 h-100 mb-2">
+                  <h4 class="card-title text-center mb-4">Information flow GD</h4>
+                  <div class="container row mx-auto">
+                    <div class="col-6 d-flex justify-content-center h-100 mb-4 mb-md-0">
+                      <div class="row d-flex justify-content-center">
+                        <img src="../images/products/product2/image3_b.jpg" class="img-fluid d-inline-block align-top mb-3" width="40%">
+                        <p class="col-12 h4 card-title text-primary">High exposure and distinctive</p>
+                        <p class="col-12 card-text">CPT pay by time</p>
+                      </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center h-100 mb-4 mb-md-0">
+                      <div class="row d-flex justify-content-center">
+                        <img src="../images/products/product2/image3_c.jpg" class="img-fluid d-inline-block align-top mb-3" width="40%">
+                        <p class="col-12 h4 card-title text-primary">Guaranteed delivery</p>
+                        <p class="col-12 card-text">CPM pay per thousand impressions</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="container row text-center text-md-left ml-0 ml-md-5" height="10em">
+              <div class="col-12 col-md-5 my-auto h-100">
+                  <p class="h1 pt-4 pt-md-0 pb-2">Search advertising</p>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col">
+                          <span class="h3 text-primary">200 million</span><br>
+                          Daily Baidu app users
+                        </div>
+                        <div class="col">
+                          <span class="h3 text-primary">6+ billion</span><br>
+                          Daily search responses
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      Search advertising relies on China's largest search engine Baidu, displaying your ads at appropriate
+                      locations on search result pages, and only requiring payment upon clicks on your ad.</li>
+                </ul>
+              </div>
+              <div class="col-12 col-md-7 d-flex justify-content-center h-100">
+                  <img src="../images/products/product3/image1.jpg" class="img-fluid d-inline-block align-top w-75">
+              </div>
+            </div>
+            <div class="container text-center">
+              <h4 class="subtitle text-primary">Creative management and placement of ad materials, multi-style ad stacking and assembly, 
+                and expanding the boundaries of design</h4>
+              <img class="img-fluid mt-1" src="../images/products/product3/image2_a_en.jpg" width="100%">
+
+              <h3 class="subtitle text-dark">You may select the following ad formats</h3>
+              <div class="row ml-n3 ml-md-0" >
+                <div class="col-12 col-md-4 d-flex justify-content-center h-100">
+                    <img src="../images/products/product3/image2_b1.jpg" class="img-fluid d-inline-block align-top w-100">
+                </div>
+                <div class="col-12 col-md-4 d-flex justify-content-center h-100">
+                    <img src="../images/products/product3/image2_b2.jpg" class="img-fluid d-inline-block align-top w-100">
+                </div>
+                <div class="col-12 col-md-4 d-flex justify-content-center h-100">
+                  <img src="../images/products/product3/image2_b3.jpg" class="img-fluid d-inline-block align-top w-100">
+                </div>
+              </div>
+            </div>
+            <div class="container text-center mt-3">
+              <p class="h3 subtitle">Search ad placement 一 on PC</p>
+              <div class="row d-flex justify-content-center">
+                <div class="col-9 col-md-4 h-100 py-md-5 mb-4 mb-md-0">
+                  <img src="../images/products/product3/image4_a.png" class="img-fluid d-inline-block my-auto">
+                </div>
+                <div class="col-11 col-md-8 h-100">
+                  <p class="h5 text-left mb-n1">Front/back pages 一 ad placed left</p>
+                  <img src="../images/products/product3/image4_b.png" class="img-fluid d-inline-block align-top">
+                </div>
+              </div>
+              <p class="card-text">No more than 5 commercial promotion results for top + bottom items. Priority: top>bottom items</p>
+            </div>
+            <div class="text-center">
+              <h3 class="subtitle text-dark">You may select to buy the following plans</h3>
+              <div class="container row mx-auto mb-md-5">
+                <div class="col-12 col-md-6 h-100 mb-2">
+                  <div class="container row mx-auto">
+                    <div class="col-4 d-flex justify-content-center h-100 mb-4 mb-md-0">
+                      <div class="row d-flex justify-content-center">
+                        <img src="../images/products/product3/image3_a.jpg" class="img-fluid d-inline-block align-top w-75">
+                      </div>
+                    </div>
+                    <div class="col-8 h-100 mb-4 mb-md-0">
+                      <div class="row">
+                        <h4 class="col-12 text-left">CPC <span class="text-primary">cost per click</span> </h4>
+                        <p class="col-12 card-text text-left">The maximum fee you are willing to pay for a click is up to you. 
+                          The actual fee will not exceed your budget limit.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 h-100 mb-2">
+                  <div class="container row mx-auto">
+                    <div class="col-4 d-flex justify-content-center h-100 mb-4 mb-md-0">
+                      <div class="row d-flex justify-content-center">
+                        <img src="../images/products/product3/image3_b.jpg" class="img-fluid d-inline-block align-top w-75">
+                      </div>
+                    </div>
+                    <div class="col-8 h-100 mb-4 mb-md-0">
+                      <div class="row">
+                        <h4 class="col-12 text-left"> oCPC <span class="text-primary">optimized CPC</span></h4>
+                        <p class="col-12 card-text text-left">CPC is calculated after AI technology is used to optimize your ads using 
+                          data from the Baidu platform, improving the effectiveness of your ads and thus the price.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="container row text-center text-md-left ml-1 ml-md-5" height="10em">
+              <div class="col-12 col-md-5 my-auto h-100">
+                  <p class="h1 pt-4 pt-md-0">Baidu Brand Zone</p>
+                  <p class="text-black">By analyzing the trends of brand searches online, 
+                    the Brandzone matrix can build a wide-scale marketing platform to satisfy advertisers' 
+                    various marketing demands, and shortening the time from recognition to capitalization. </p>
+              </div>
+              <div class="col-12 col-md-7 d-flex justify-content-center h-100">
+                  <img src="../images/products/product4/banner.jpg" class="img-fluid d-inline-block align-top w-75">
+              </div>
+            </div>
+            <div class="container pt-1 pt-md-2 text-center">
+              <h4 class="subtitle text-dark">Widespread exposure of your well-crafted image allows you to capture target users</h4>
+              <div class="container row mx-auto justify-content-center mt-3">
+                <div class="card col-12 col-md-5 d-flex justify-content-center h-100 mb-4 mb-md-0 mr-n2">
+                    <img class="img-fluid" src="../images/products/product4/image1_a.jpg">
+                    <div class="row mt-4">
+                      <div class="col-5 col-md-6">
+                        <h3 class="text-danger text-left">Reasonable prices</h3>
+                        <p class="card-text text-left">Adjust and optimize the price ratio of PC and mobile ads to make prices more reasonable;</p>
+                          <p class="card-text text-left">Added regionalized brand customer resources. </p>
+                      </div>
+                      <div class="col-7 col-md-6">
+                        <h3 class="text-danger text-left">Fruitful resources</h3>
+                        <p class="col-12 card-text text-left">Added 3 local search ad channels, mobile picture lists, 
+                          and mobile LU features to the basic 4 PC/mobile channels for marketing</p>
+                        <p class="card-text text-left">Added resources such as brand demand keywords and categories.</p>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="card col-12 col-md-5 d-flex justify-content-center h-100">
+                  <img class="img-fluid" src="../images/products/product4/image1_b.jpg">
+                  <div class="row mt-4">
+                    <div class="col-6">
+                      <h3 class="text-danger text-left">Modern</h3>
+                      <p class="card-text text-left">The basic and advanced ad formats have been fully upgraded with larger sizes 
+                        and eye-catching designs, while a variety of large-screen innovative ad formats have been introduced to 
+                        comprehensively enhance brand exposure.</p>
+                    </div>
+                    <div class="col-6">
+                      <h3 class="text-danger text-left">Innovative</h3>
+                      <p class="col-12 card-text text-left">Integrating the latest user interaction technology – such as Baidu AR, VR, and AI – 
+                        into Brandzone products to increase engagement. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="p4-carousel" class="carousel slide my-5 pt-3" data-interval="false">
+              <ol class="carousel-indicators h4 mt-n2">
+                <li data-target="#p4-carousel" data-slide-to="0" class="active">
+                  <p class="my-auto">PC ads</p>
+                </li>
+                <li data-target="#p4-carousel" data-slide-to="1">
+                  <p class="my-auto">Mobile ads</p>
+                </li>
+                <li data-target="#p4-carousel" data-slide-to="2">
+                  <p class="my-auto">NS ads</p>
+                </li>
+              </ol>
+              <div class="carousel-inner pt-5">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="../images/products/product4/image2_a.jpg">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="../images/products/product4/image2_b.jpg">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="../images/products/product4/image2_c.jpg">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="container row text-center text-md-left ml-1 ml-md-5" height="10em">
+              <div class="col-12 col-md-5 my-auto h-100">
+                  <p class="h1 pt-4 pt-md-0">Baidu local search ads</p>
+              </div>
+              <div class="col-12 col-md-7 d-flex justify-content-center h-100">
+                  <img src="../images/products/product5/banner.jpg" class="img-fluid d-inline-block align-top w-75">
+              </div>
+            </div>
+            <div class="container pt-1 pt-md-0 text-center">
+              <h3 class="subtitle text-dark">You may select the following ad formats to display on the Baidu map</h3>
+              <div class="container-liquid row">
+                <div class="card col-6 col-md-3">
+                    <img class="card-img-top" src="../images/products/product5/image1_a.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Large scenic map</h4>
+                        <p class="card-text">Detailed map markers</p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3">
+                    <img class="card-img-top" src="../images/products/product5/image1_b.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Dynamic brand image</h4>
+                        <p class="card-text">Triggered by brand keyword searches</p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3">
+                    <img class="card-img-top" src="../images/products/product5/image1_c.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Opening hours display</h4>
+                        <p class="card-text">Red font, triggered by search terms</p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3">
+                  <img class="card-img-top" src="../images/products/product5/image1_d.png">
+                  <div class="card-body">
+                      <h4 class="card-title">SUG page with text</h4>
+                      <p class="card-text"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container text-center">
+              <h3 class="subtitle text-dark">Location page ads</h3>
+              <div class="container row mt-4 ml-1 ml-md-0">
+                <div class="card col-6 h-100">
+                  <div class="h-100">
+                    <img class="card-img-top w-75" src="../images/products/product5/image2_a.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Nearby page ad</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="card col-6 h-100">
+                  <div class="h-100">
+                    <img class="card-img-top w-75" src="../images/products/product5/image2_b.png">
+                    <div class="card-body">
+                        <h4 class="card-title">City/country page ad</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer font-small bg-light mt-3">
+        <div class="container footer-copyright text-center py-3">© 2020 Copyright 中国搜索（亚洲）有限公司版权所有
+        </div>
+    </footer>
+</body>
+
+</html>
