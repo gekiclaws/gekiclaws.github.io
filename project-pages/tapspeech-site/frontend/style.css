@@ -98,3 +98,6 @@ h3{
     background-color: rgba(0,0,0,0);
 }
 
+.overflow{
+    overflow: auto;
+}
