@@ -142,22 +142,22 @@ figcaption {
 .navigation-link {
   margin-left: 25px;
   padding: 15px 0px;
-  color: #aaa;
-  font-size: 14px;
+  color: #fff;
+  font-size: 20px;
 }
 
 .navigation-link:hover {
-  color: #333;
+  color: royalblue;
 }
 
 .navigation-link.w--current {
-  color: #333;
+  color: royalblue;
 }
 
 .navigation-bar {
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: #fff;
+  background-color: #343a40;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, .06);
 }
 
@@ -294,7 +294,7 @@ figcaption {
 .site-name {
   display: block;
   margin-top: 11px;
-  color: #333;
+  color: #fff;
   font-size: 24px;
   line-height: 100%;
   text-decoration: none;
@@ -359,16 +359,16 @@ figcaption {
 
 .post-summary {
   display: inline;
-  color: #aaa;
-  font-size: 14px;
+  color: #000;
+  font-size: 18px;
   line-height: 22px;
 }
 
 .post-info {
   display: inline-block;
   margin-right: 8px;
-  color: #aaa;
-  font-size: 10px;
+  color: #000;
+  font-size: 15px;
   line-height: 18px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -593,7 +593,7 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
   }
   .navigation-menu {
     border-bottom: 1px solid #ddd;
-    background-color: #fff;
+    background-color: #343a40;
   }
   .site-name {
     margin-top: 13px;
