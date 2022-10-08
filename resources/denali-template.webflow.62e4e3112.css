@@ -612,6 +612,7 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
   }
   .menu-button {
     padding: 15px;
+    color: #fff!important
   }
   .white-bg-heading {
     margin-bottom: 20px;
