@@ -1,0 +1,70 @@
+:root {
+    --lightBLU: rgb(205, 234, 244);
+    --gray : rgb(123, 124, 139); 
+    --lightGray: rgb(212, 213, 226);
+    --darkGray : rgb(43, 43, 44);
+}
+
+@font-face {
+    font-family: MyFont;
+    src: url(../static/Titillium_Web/TitilliumWeb-Regular.ttf); 
+}
+
+* {
+    padding: 5px; 
+    margin: 5px;
+    font-family: MyFont;
+    /* border: 1px solid black; */
+}
+
+#webname {
+    background-color: var(--lightBLU);
+}
+
+.classA {
+    width: 45%;
+    display: inline-block;
+}
+
+header {
+    background-color: var(--lightGray);
+}
+
+nav a {
+    text-decoration: none;
+    margin: -5px;
+    margin-right: 15px;
+    font-size: x-large;
+    color: blue;
+}
+
+form * {
+    display: block;
+    width: 50%;
+    margin: auto;
+    padding-top: 10px;
+    text-align: center;
+}
+
+th {
+    padding: 12px;
+    background-color: var(--darkGray);
+    color: white;
+    width: fit-content;
+}
+ 
+ 
+table tr:hover {
+    background-color: var(--lightBLU);
+}
+
+
+table tr:nth-child(even) {
+    background-color: var(--lightGray);
+}
+
+#send{
+    background-color: lightblue;
+    border: none;
+    border-radius: 25em;
+}
