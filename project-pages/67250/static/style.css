@@ -68,3 +68,28 @@ table tr:nth-child(even) {
     border: none;
     border-radius: 25em;
 }
+
+#FavList {
+    display: none;
+}
+
+#SeeMoreBTN {
+background-color: var(--lightBLU);
+border: 0px;
+border-radius: 16px;
+font-size: large;
+}
+
+#longIntro, #readLess {
+display: none;
+}
+
+#readLess, #readMore {
+font-style: italic;
+background-color: var(--lightBLU_A);
+}
+
+#ValidateMsg {
+width: max-content;
+margin: auto;
+}

@@ -6,13 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../static/style.css">
         <script defer src="../static/script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
         <meta name="author" content="Matthew Wong">
         <meta name="keywords" content="Carnegie Mellon University, Information Systems">
         <meta name="description" content="Matthew Wong's professional website">
         <title>Matthew Wong</title>
     </head>
-    <body>
+    <body onload="addYear()">
         <header>
             <h1 id="webname">Matthew Wong</h1>
             <nav>
@@ -25,18 +26,15 @@
         <div class="main">
             <h2>Contact Me</h2>
             <form action="">
-                <label for="name">Your Name (required):</label>
-                <input type="text" id="name" required>
-                <br>
-                <label for="email">Your Email (required):</label>
-                <input type="email" id="email" required>
-                <br>
-                <label for="comment">Your Comment or Question:</label>
-                <br>
-                <textarea id="comment" cols="30" rows="10" required></textarea>
-                <br>
-                <input id="send" type="submit" value="SEND"/>
+                <label for="UserName">Your name (required): </label>
+                <input type="text" name="UserName" id="UserName" required>
+                <label for="UserEmail">Your email (required): </label>
+                <input type="email" name="UserEmail" id="UserEmail" required>
+                <label for="UserText">Your text (required): </label>
+                <textarea name="UserText" id="UserText" cols="30" rows="10" required></textarea>
+                <input type="submit" value="Send" onclick="validate()">
             </form>
+            <p id="ValidateMsg"></p>
             <br>
             <table>
                 <tr><th>Contact Method</th><th>Description</th></tr>
@@ -46,7 +44,7 @@
             </table>
         </div>
         <footer>
-            <p>Matthew Wong &copy; 2024</p>
+            <p id="copyYear">Matthew Wong &copy;</p>
         </footer>
     </body>
 </html>

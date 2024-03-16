@@ -6,13 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../static/style.css">
         <script defer src="../static/script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
         <meta name="author" content="Matthew Wong">
         <meta name="keywords" content="Carnegie Mellon University, Information Systems">
         <meta name="description" content="Matthew Wong's professional website">
         <title>Matthew Wong</title>
     </head>
-    <body>
+    <body onload="addYear()">
         <header>
             <h1 id="webname">Matthew Wong</h1>
             <nav>
@@ -23,16 +24,18 @@
             </nav>
         </header>
         <div class="main">
-            <h2>Curriculum Vitae</h2>
-            <table>
-                <tr><th>Name</th><th>Description</th></tr>
-                <tr><td>first</td><td>Matthew</td></tr>
-                <tr><td>last</td><td>Wong</td></tr>
-            </table>
-            <a href="../static/resume.pdf" target="_blank">My resume – pdf version</a>
+            <h2>Things I love to do for fun</h2>
+            <button id="SeeMoreBTN" onclick="showList()">Click to see...</button>
+            <ul id="FavList">
+                <li>Basketball</li>
+                <li>Bouldering</li>
+                <li>Rocket League</li>
+                <li>Volleyball</li>
+                <li>Ski</li>
+            </ul>
         </div>
         <footer>
-            <p>Matthew Wong &copy; 2024</p>
+            <p id="copyYear">Matthew Wong &copy;</p>
         </footer>
     </body>
 </html>
