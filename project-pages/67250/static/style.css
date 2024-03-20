@@ -69,9 +69,9 @@ table tr:nth-child(even) {
     border-radius: 25em;
 }
 
-#FavList {
+/* #FavList {
     display: none;
-}
+} */
 
 #SeeMoreBTN {
 background-color: var(--lightBLU);
@@ -92,4 +92,24 @@ background-color: var(--lightBLU_A);
 #ValidateMsg {
 width: max-content;
 margin: auto;
+}
+
+#map {
+    height: 40vh;
+}
+
+#funIMG {
+    width: 50%;
+    border-radius: 100%;
+}
+
+.mainFun {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#item1, #item2, #item3, #item4 {
+    width: 40vw;
+    margin: auto;
 }

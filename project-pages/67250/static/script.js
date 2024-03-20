@@ -1,52 +1,3 @@
-// var x = 5;
-// var y = 7;
-// var z = x + y;
-// console.log(z);
-
-// var A = 'Hello';
-// var B = ' world!';
-// var C = A + B;
-// console.log(C);
-
-// function SumNPrint(x1, x2) {
-//     var x3 = x1 + x2;
-//     console.log(x3);
-// }
-// SumNPrint(x, y);
-// SumNPrint(A, B);
-
-// if (C.length > z) {
-//     console.log(C);
-// } else if (z > C.length) {
-//     console.log(z);
-// } else {
-//     console.log("good job!");
-// }
-
-// var L1 = ["Watermelon", "Pineapple", "Pear", "Banana"];
-// var L2 = ["Apple", "Banana", "Kiwi", "Orange"];
-// function findTheBanana(array) {
-//     for (let index = 0; index < array.length; index++) {
-//         const element = array[index];
-//         if (array[index] === "Banana") {
-//             alert("found the Banana in " + index);
-//         }
-//     }
-// }
-// findTheBanana(L1);
-// findTheBanana(L2);
-
-// L1.forEach((element, index) => {
-//     if (element === "Banana") {
-//         alert("We found a banana in the first array in " + index);
-//     }
-// });
-// L2.forEach((element, index) => {
-//     if (element === "Banana") {
-//         alert("We found a banana in the second array in " + index);
-//     }
-// });
-
 function greetingFunc() {
     var d = new Date();
     var h = d.getHours();
@@ -62,12 +13,6 @@ function greetingFunc() {
     }
 }
 
-// var L = window.location.href;
-// console.log(L);
-// if (L.includes("index.html")) {
-//     greetingFunc();
-// }
-
 function addYear() {
     var d = new Date();
     var y = d.getFullYear();
@@ -75,11 +20,11 @@ function addYear() {
     E.innerHTML += y;
 }
 
-function showList() {
-    document.getElementById("FavList").style.display = "block";
-    document.getElementById("SeeMoreBTN").style.display = "none";
-}
-    
+// function showList() {
+//     document.getElementById("FavList").style.display = "block";
+//     document.getElementById("SeeMoreBTN").style.display = "none";
+// }
+
 $("#readLess").click(function() {
     $("#longIntro").hide();
     $("#readLess").hide();
@@ -101,4 +46,40 @@ function validate() {
     if (!userName.checkValidity() || !userEmail.checkValidity() || !userText.checkValidity()) {
         msg.innerHTML = "Please fill out the form correctly so I can get back to you :)";
     }
+}
+
+// Initialize and add the map
+let map;
+async function initMap() {
+    // The location of CMU
+    const position = { lat:1.3044787311216668, lng: 103.87662288060007 };
+    const position2 = { lat: 1.2818981, lng: 103.854339};
+    
+    
+    // Request needed libraries.
+    //@ts-ignore
+    const { Map } = await google.maps.importLibrary("maps");
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+    // The map, centered at CMU
+    map = new Map(document.getElementById("map"), {
+        zoom: 12,
+        center: position,
+        mapId: "DEMO_MAP_ID",
+    });
+    // The marker, positioned at CMU
+    const marker = new AdvancedMarkerElement({
+        map: map,
+        position: position,
+        title: "National Stadium",
+    });
+    const marker2 = new AdvancedMarkerElement({
+        map: map,
+        position: position2,
+        title: "Gardens By the Bay",
+    });
+}
+
+var L = window.location.href;
+if (L.includes("fun.html")) {
+    initMap();
 }
