@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../static/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <script defer src="../static/script.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -16,32 +18,24 @@
     <body onload="addYear()">
         <header>
             <h1 id="webname">Matthew Wong</h1>
-            <nav>
+            <nav id="myTopnav" class="topnav">
                 <a href="index.html">Home</a>
-                <a href="CV.html">CV</a>
+                <a href="CV.html" class="active">CV</a>
                 <a href="contact.html">Contact me</a>
                 <a href="fun.html">For fun</a>
+                <a href="javascript:void(0);" class="icon">
+                    <i class="fa fa-bars" onclick="activeNav()"></i>
+                </a>
             </nav>
         </header>
         <div class="main">
-            <h2>Contact Me</h2>
-            <form action="">
-                <label for="UserName">Your name (required): </label>
-                <input type="text" name="UserName" id="UserName" required>
-                <label for="UserEmail">Your email (required): </label>
-                <input type="email" name="UserEmail" id="UserEmail" required>
-                <label for="UserText">Your text (required): </label>
-                <textarea name="UserText" id="UserText" cols="30" rows="10" required></textarea>
-                <input type="submit" value="Send" onclick="validate()">
-            </form>
-            <p id="ValidateMsg"></p>
-            <br>
+            <h2>Curriculum Vitae</h2>
             <table>
-                <tr><th>Contact Method</th><th>Description</th></tr>
-                <tr><td>Email</td><td>chunkitw@andrew.cmu.edu</td></tr>
-                <tr><td>Phone</td><td>412-390-7963</td></tr>
-                <tr><td>LinkedIn</td><td>https://www.linkedin.com/in/mw-matthewwong/</td></tr>
+                <tr><th>Name</th><th>Description</th></tr>
+                <tr><td>first</td><td>Matthew</td></tr>
+                <tr><td>last</td><td>Wong</td></tr>
             </table>
+            <a href="../static/resume.pdf" target="_blank">My resume – pdf version</a>
         </div>
         <footer>
             <p id="copyYear">Matthew Wong &copy;</p>
