@@ -135,7 +135,7 @@ section h2 {
 }
 
 .story-image {
-    flex: 1;
+    flex: 1.5;
     margin-right: 20px;
 }
 
@@ -272,6 +272,53 @@ display: block;
 .image-caption{
     text-align: center;
     margin-top: 20px;
+}
+
+/* Styles for image-carousel arrows */
+.image-carousel .slick-prev,
+.image-carousel .slick-next {
+    position: absolute;
+    transform: translateY(-120%);
+    z-index: 1;
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-carousel .slick-prev:before,
+.image-carousel .slick-next:before {
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: 1;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.image-carousel .slick-prev {
+    left: 15px;
+}
+
+.image-carousel .slick-next {
+    right: 15px;
+}
+
+.image-carousel .slick-prev:hover,
+.image-carousel .slick-next:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
 
 /*  */

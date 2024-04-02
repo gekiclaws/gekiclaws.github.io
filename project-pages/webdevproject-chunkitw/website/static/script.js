@@ -75,10 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         $('.image-carousel').slick({
+            autoplay: true,
             dots: true,
             arrows: true,
             infinite: false,
-            speed: 100,
+            speed: 500,
             draggable: true
         });
     }
