@@ -8,17 +8,19 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../static/style.css">
+        <script src="../static/script.js"></script>
     </head>
     <body>
         <header>
             <img src="../static/logo.png" alt="Say it With Sweets Logo">
             <nav>
                 <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="products.html">Our Products</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Our Offerings</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
-              </nav>
+            </nav>
+            <button id="darkModeToggle">Toggle Dark Mode</button>
         </header>
         <main>
             <section id="hero">
@@ -31,8 +33,12 @@
                         <h2>What we do</h2>
                         <p>Say it with Sweets is a bakery that provides cakes, cookies, cupcake creations for all occasions, and offers unique sweet gifts. Located in Altoona, Pennsylvania, we've been in business for over 12 years.</p>
                     </div>
-                    <div class="image">
-                        <img src="../static/image1.jpeg" alt="What we do">
+                    <div class="video">
+                        <video controls>
+                            <source src="../static/promo.mp4" type="video/mp4" alt="video promo">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="video-caption">Video courtesy of: Amanda</p>
                     </div>
                 </div>
             </section>

@@ -8,30 +8,91 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../static/style.css">
+        <script src="../static/script.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     </head>
     <body>
-        <header><img src="../static/logo.png" alt="Say it With Sweets Logo">
+        <header>
+            <img src="../static/logo.png" alt="Say it With Sweets Logo">
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Our Products</a></li>
+                    <li><a href="products.html">Our Offerings</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
+            <button id="darkModeToggle">Toggle Dark Mode</button>
         </header>
+        <!-- Using the https://kenwheeler.github.io/slick/ library here -->
         <section id="products">
-            <div class="product-card">
-              <div class="product-image">
-                <img src="cake.jpg" alt="Cake">
-              </div>
-              <div class="product-details">
-                <h3>Cake</h3>
-                <p>Description of the cake.</p>
-              </div>
+            <div class="category-buttons center">
+                <button data-category="cakes" class="active">Cakes</button>
+                <button data-category="cupcakes">Cupcakes</button>
+                <button data-category="cookies">Cookies</button>
             </div>
-            <!-- Add more product cards -->
+            <div class="product-carousel">
+                <div class="product-category" data-category="cakes">
+                    <div class="container">
+                        <div class="content center">
+                            <h2>Cookie cakes</h2>
+                        </div>
+                        <div class="image">
+                            <img src="../static/cc.jpeg" alt="Cookie cakes">
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="product-image">
+                            <div class="image-carousel">
+                                <div>
+                                    <img src="../static/a1.jpeg" alt="Anniversary Cakes">
+                                    <h3 class="image-caption">Anniversary Cakes</h3>
+                                </div>
+                                <div>
+                                    <img src="../static/a2.jpeg" alt="Baby Shower Cakes">
+                                    <h3 class="image-caption">Baby Shower Cakes</h3>
+                                </div>
+                                <div>
+                                    <img src="../static/a3.jpeg" alt="What we do">
+                                    <h3 class="image-caption">Graduation Cakes</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h2 class="center">Custom made cakes</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-category" data-category="cupcakes">
+                    <!-- <div class="container">
+                        <div class="content center">
+                            <h2>Cookie cakes</h2>
+                        </div>
+                        <div class="image">
+                            <img src="../static/image1.jpeg" alt="What we do">
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="product-image">
+                            <img src="../static/image3.jpeg" alt="Cupcake bouquets">
+                        </div>
+                        <div class="product-details">
+                            <h2 class="center">Custom made cakes</h2>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="product-category" data-category="cookies">
+                    <!-- Add cookie product cards here -->
+                    <h2>Cookies</h2>
+                </div>
+            </div>
             <!-- Regularly update the products page with new offerings or seasonal specials to keep returning customers engaged and encourage repeat visits. -->
-          </section>
+        </section>
+
+        
         <footer>
             &copy; 2024 Say it With Sweets. All rights reserved.
         </footer>
