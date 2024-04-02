@@ -257,7 +257,8 @@ display: block;
 .product-details {
     flex: 1;
     padding: 20px;
-    margin: auto 0;
+    margin: auto;
+    margin-top: 8em;
     text-align: center;
     justify-content: center;
 }
