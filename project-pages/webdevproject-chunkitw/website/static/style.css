@@ -6,7 +6,7 @@ body {
     color: #333;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, button {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -402,4 +402,52 @@ color: #fff;
 
 body.dark-mode th {
 background-color: #555;
+}
+
+#yelp-reviews {
+    padding: 40px 0;
+}
+  
+#yelp-reviews {
+    padding: 40px 0;
+    position: relative;
+}
+
+#reviews-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#reviews-container.loaded {
+    opacity: 1;
+}
+
+.review {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.review-name {
+    font-weight: bold;
+}
+
+.review-text {
+    margin-bottom: 10px;
+}
+
+.review-rating {
+    font-weight: bold;
 }
