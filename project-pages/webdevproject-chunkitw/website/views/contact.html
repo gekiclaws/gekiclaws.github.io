@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+    <html lang="en"> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Say it With Sweets – Contact</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body>
+        <header>
+            <img src="../static/logo.png" alt="Say it With Sweets Logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Our Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="contact-details">
+                <h2>How you can reach us</h2>
+                <table>
+                    <tr>
+                        <th>Our address</th>
+                        <td>1307 Pleasant Valley Blvd<br>Altoona, PA 16602</td>
+                    </tr>
+                    <tr>
+                        <th>By phone</th>
+                        <td>814-937-1564</td>
+                    </tr>
+                    <tr>
+                        <th>By email</th>
+                        <td><a href="mailto:info@sayitwithsweets.com">info@sayitwithsweets.com</a></td>
+                    </tr>
+                </table>
+            </section>
+            
+            <section id="hours">
+                <h2>Our hours of operation</h2>
+                <table>
+                    <tr>
+                        <th>Monday to Friday</th>
+                        <td>10:00 AM to 3:00 PM</td>
+                    </tr>
+                    <tr>
+                        <th>Saturday & Sunday</th>
+                        <td>By appointment only</td>
+                    </tr>
+                </table>
+            </section>
+            
+            <section id="map">
+                <h2>Where to find us</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3033.620374411961!2d-78.3869088!3d40.505777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89cb9188567d3371%3A0x79740809b421e8ac!2s1307%20Pleasant%20Valley%20Blvd%2C%20Altoona%2C%20PA%2016602!5e0!3m2!1sen!2sus!4v1712042728770!5m2!1sen!2sus" width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+
+            <section id="social-media">
+                <h2>Follow us on social media!</h2>
+                <div class="social-media-icons">
+                    <a href="https://www.instagram.com/sayitwithsweets11/" target="_blank">
+                        <img src="../static/instagram-icon.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="https://www.facebook.com/sayitwith.sweets/" target="_blank">
+                        <img src="../static/facebook-icon.png" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="https://www.tripadvisor.com/Restaurant_Review-g30034-d5017286-Reviews-Say_IT_With_Sweets-Altoona_Pennsylvania.html" target="_blank">
+                        <img src="../static/tripadvisor-icon.png" alt="TripAdvisor" class="social-icon">
+                    </a>
+                </div>
+            </section>
+
+            <hr>
+    
+            <section id="contact-form">
+                <h2>Join our mailing list below!</h2>
+                <form action="mailto:info@sayitwithsweets.com" method="post" enctype="text/plain">
+                    <label for="name">Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required minlength="2" maxlength="100">
+            
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required minlength="5" maxlength="100">
+            
+                    <label for="sms-checkbox">
+                        <input type="checkbox" id="sms-checkbox" name="sms-checkbox">
+                        I would like to receive messages via SMS text
+                    </label>
+            
+                    <label for="phone">Mobile phone</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" minlength="10" maxlength="10">
+            
+                    <label for="zipcode">Zip code</label>
+                    <input type="text" id="zipcode" name="zipcode" pattern="[0-9]{5}" minlength="5" maxlength="5">
+            
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+        </main>    
+        <footer>
+            &copy; 2024 Say it With Sweets. All rights reserved.
+        </footer>
+    </body>
+</html>
