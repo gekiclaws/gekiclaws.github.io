@@ -15,9 +15,6 @@ $(function () {
             $.each(response.items, function (k, item) {
                 display += `<div class="card mb-3 mx-auto" style="width: 50rem;">`;
                 var src = item["thumbnail"]; // use thumbnail url
-                if (!(src.startsWith("https://medium.com/_/stat"))){ // check that there's a thumbnail there
-                    display += `<img src="${src}" class="card-img-top" alt="Cover image">`;
-                }
                 display += `<div class="card-body">`;
                 display += `<h5 class="card-title text-capitalize"><a href="${item.link}">${item.title}</a></h5>`;
                 var yourString = item.description.replace(/<img[^>]*>/g,""); //replace with your string.
@@ -52,9 +49,6 @@ $(function () {
             $.each(response.items, function (k, item) {
                 display += `<div class="card mb-3 mx-auto" style="width: 50rem;">`;
                 var src = item["thumbnail"]; // use thumbnail url
-                if (!(src.startsWith("https://medium.com/_/stat"))){
-                    display += `<img src="${src}" class="card-img-top" alt="Cover image">`;
-                }
                 display += `<div class="card-body">`;
                 display += `<h5 class="card-title text-capitalize"><a href="${item.link}">${item.title}</a></h5>`;
                 var yourString = item.description.replace(/<img[^>]*>/g,""); //replace with your string.
