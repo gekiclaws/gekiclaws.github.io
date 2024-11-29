@@ -38,12 +38,9 @@ function highlightActiveLink() {
 
 // Function to dynamically load the Webflow JS after injection
 function loadWebflowScript() {
-    // console.log("Loading Webflow script...");
     const script = document.createElement("script");
     script.src = "./resources/webflow.5b0765584.js"; // Update the path as needed
     script.type = "text/javascript";
-    // script.onload = () => console.log("Webflow script successfully loaded.");
-    // script.onerror = (err) => console.error("Failed to load Webflow script:", err);
     document.body.appendChild(script);
 }
 
