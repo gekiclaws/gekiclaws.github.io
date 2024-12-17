@@ -39,7 +39,7 @@ function highlightActiveLink() {
 // Function to dynamically load the Webflow JS after injection
 function loadWebflowScript() {
     const script = document.createElement("script");
-    script.src = "./resources/webflow.5b0765584.js"; // Update the path as needed
+    script.src = "./static/js/webflow.5b0765584.js"; // Update the path as needed
     script.type = "text/javascript";
     document.body.appendChild(script);
 }
