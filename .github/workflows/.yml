@@ -1,0 +1,17 @@
+name: PMD Static Analysis
+
+on:
+  push: # Run on all branches for push events
+    branches:
+      - '**'
+
+jobs:
+  pmd-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run PMD
+        uses: pmd/pmd-github-action@v2
+        with:
+          rulesets: 'category/html/bestpractices.xml'
