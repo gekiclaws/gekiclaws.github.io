@@ -60,33 +60,5 @@ $(() => {
             });
 
             $content.html(display);
-        })
-        .then(() => {
-            // Pagination Logic
-            const pageSize = 4;
-            const pageCount = Math.ceil($(".card").length / pageSize);
-
-            for (let i = 0; i < pageCount; i++) {
-                $("#pagin").append(`<li class="page-item"><a class="page-link" href="#">${i + 1}</a></li>`);
-            }
-            $("#pagin li:nth-child(1)").addClass("active");
-
-            const showPage = (page) => {
-                $(".card").hide();
-                $(".card").each(function (n) {
-                    if (n >= pageSize * (page - 1) && n < pageSize * page) {
-                        $(this).show();
-                    }
-                });
-            };
-
-            showPage(1);
-
-            $("#pagin li").click(function () {
-                $("#pagin li").removeClass("active");
-                $(this).addClass("active");
-                showPage(parseInt($(this).text()));
-                return false;
-            });
         });
 });
