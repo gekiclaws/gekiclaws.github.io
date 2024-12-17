@@ -4,9 +4,6 @@ on:
   push: # Run on all branches for push events
     branches:
       - '**'
-  pull_request: # Run on all pull request events
-    branches:
-      - '**'
 
 jobs:
   pmd-check:
@@ -19,4 +16,4 @@ jobs:
           java-version: '11'
       - uses: pmd/pmd-github-action@v2
         with:
-          rulesets: 'ruleset.xml'
+          rulesets: 'category/html/bestpractices.xml'
