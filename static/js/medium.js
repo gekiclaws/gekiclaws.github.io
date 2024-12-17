@@ -11,7 +11,7 @@ $(() => {
             (response) => {
                 if (response.status == 'ok') {
                     posts = posts.concat(response.items); // Merge posts
-                    resolve(response.feed.image); // Return feed image
+                    resolve();
                 }
             }
         );
@@ -24,7 +24,7 @@ $(() => {
             (response) => {
                 if (response.status == 'ok') {
                     posts = posts.concat(response.items); // Merge posts
-                    resolve(response.feed.image); // Return feed image
+                    resolve();
                 }
             }
         );
@@ -32,17 +32,12 @@ $(() => {
 
     // Process and display the posts
     Promise.all([main, acdx])
-        .then((images) => {
-            // Append feed images from both sources
-            images.forEach((image) => {
-                $("#logo").append(`<img src="${image}" class="rounded mx-auto d-block">`);
-            });
-
+        .then(() => {
             // Sort posts by publication date (descending order)
             posts.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
 
             // Render sorted posts
-            posts.forEach((item, k) => {
+            posts.forEach(item => {
                 display += `<div class="card mb-3 mx-auto" style="width: 50rem;">`;
                 display += `<div class="card-body">`;
                 display += `<h5 class="card-title text-capitalize"><a href="${item.link}">${item.title}</a></h5>`;
@@ -56,7 +51,6 @@ $(() => {
                 display += `<p class="card-text">${trimmedString}...</p>`;
                 display += `<a href="${item.link}" target="_blank" class="btn btn-outline-success" >Read More</a>`;
                 display += `</div></div>`;
-                return k < 10; // Limit to 10 posts
             });
 
             $content.html(display);
