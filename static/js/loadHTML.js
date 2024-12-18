@@ -15,7 +15,6 @@ function includeHTML() {
                     element.innerHTML = data;
                     element.removeAttribute("data-include-html");
                 })
-                .catch((error) => console.error(error));
             fetchPromises.push(fetchPromise); // Add the promise to the list
         }
     });

@@ -14,4 +14,7 @@
 
     <!-- Exclude specific directories or files -->
     <exclude-pattern>.*/static/project-pages/.*</exclude-pattern>
+    <exclude-pattern>.*/static/js/jquery.min.js*</exclude-pattern>
+    <exclude-pattern>.*/static/js/webflow.5b0765584.js*</exclude-pattern>
+    <exclude-pattern>.*/static/js/webfont.js*</exclude-pattern>
 </ruleset>
