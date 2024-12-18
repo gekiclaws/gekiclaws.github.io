@@ -23,12 +23,21 @@ jobs:
       # Download and install PMD 7.8.0
       - name: Install PMD
         run: |
+          # Download PMD 7.8.0 binary distribution
           curl -L -o pmd-bin.zip https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.8.0/pmd-dist-7.8.0-bin.zip
+          
+          # Extract the PMD zip file
           unzip -o pmd-bin.zip -d pmd
+          
+          # Move the extracted folder to /opt/pmd
           sudo mv pmd/pmd-bin-7.8.0 /opt/pmd
+          
+          # Add PMD to the PATH (for subsequent steps)
           echo "/opt/pmd/bin" >> $GITHUB_PATH
-          ls -la /opt/pmd/bin # Verify PMD binaries
-          pmd -version        # Confirm PMD is installed correctly
+          
+          # Verify the installation
+          ls -la /opt/pmd/bin    # List the PMD binary directory
+          pmd -version           # Confirm PMD is installed and accessible
 
       # Run PMD on HTML files
       - name: Run PMD on HTML files
