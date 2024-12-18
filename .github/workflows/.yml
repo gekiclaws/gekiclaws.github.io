@@ -17,21 +17,47 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          java-version: '11' # PMD requires Java 11 or higher
+          java-version: '21' # PMD requires Java 11 or higher
           distribution: 'temurin' # Use Eclipse Temurin as the Java distribution
 
-      # Install PMD
+      # Download and install PMD 7.8.0
       - name: Install PMD
         run: |
-          curl -L -o pmd-bin.zip https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.8.0/pmd-dist-7.8.0-bin.zip
-          unzip pmd-bin.zip
-          sudo mv pmd-bin-7.8.0 /opt/pmd
-          echo "export PATH=/opt/pmd/bin:\$PATH" >> $GITHUB_ENV
+          cd $HOME
+          curl -OL https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.8.0/pmd-dist-7.8.0-bin.zip
+          unzip pmd-dist-7.8.0-bin.zip
+          
+          # Verify the installation
+          $HOME/pmd-bin-7.8.0/bin/pmd --version
 
       # Run PMD on HTML files
       - name: Run PMD on HTML files
-        run: pmd check -f text -R .github/rulesets/html.xml -d ./
+        continue-on-error: true
+        run: |
+          $HOME/pmd-bin-7.8.0/bin/pmd check -f text -R .github/rulesets/html.xml -d ./ 2>&1 | tee pmd-html-output.log; pstat=(${PIPESTATUS[0]})
+          cat pmd-html-output.log
+          if [ "$pstat" -eq 4 ]; then
+            echo "HTML check failed." | tee html-fail.log
+            exit 1
+          fi
 
       # Run PMD on JS files
       - name: Run PMD on JS files
-        run: pmd check -f text -R .github/rulesets/js.xml -d ./
+        continue-on-error: true
+        run: |
+          $HOME/pmd-bin-7.8.0/bin/pmd check -f text -R .github/rulesets/js.xml -d ./ 2>&1 | tee pmd-js-output.log; pstat=(${PIPESTATUS[0]})
+          cat pmd-js-output.log
+          if [ "$pstat" -eq 4 ]; then
+            echo "JS check failed." | tee js-fail.log
+            exit 1
+          fi
+
+      # Final step: Fail if either stage failed
+      - name: Check PMD results
+        run: |
+          if [ html-fail.log ] || [ js-fail.log ]; then
+            echo "PMD checks failed. Please revise your code."
+            exit 1
+          else
+            echo "All PMD checks passed."
+          fi
