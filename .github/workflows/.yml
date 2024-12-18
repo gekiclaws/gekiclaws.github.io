@@ -38,6 +38,7 @@ jobs:
           cat pmd-html-output.log
           if [ "$pstat" -eq 4 ]; then
             echo "HTML check failed." | tee html-fail.log
+            exit 1
           fi
 
       # Run PMD on JS files
@@ -48,12 +49,14 @@ jobs:
           cat pmd-js-output.log
           if [ "$pstat" -eq 4 ]; then
             echo "JS check failed." | tee js-fail.log
+            exit 1
           fi
 
       # Final step: Fail if either stage failed
       - name: Check PMD results
         run: |
           if [ html-fail.log ] || [ js-fail.log ]; then
+            echo "PMD checks failed. Please revise your code."
             exit 1
           else
             echo "All PMD checks passed."
