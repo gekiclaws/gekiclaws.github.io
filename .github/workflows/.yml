@@ -37,11 +37,11 @@ jobs:
         run: |
           alias pmd="$HOME/pmd-bin-7.8.0/bin/pmd"
           exec bash -l
-          pmd check -f text -R .github/rulesets/html.xml -d ./
+          pmd check -f text -R .github/rulesets/html.xml -d ./ 2>&1
 
       # Run PMD on JS files
       - name: Run PMD on JS files
         run: |
           alias pmd="$HOME/pmd-bin-7.8.0/bin/pmd"
           exec bash -l
-          pmd check -f text -R .github/rulesets/js.xml -d ./
+          pmd check -f text -R .github/rulesets/js.xml -d ./ 2>&1
