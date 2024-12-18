@@ -32,6 +32,7 @@ jobs:
 
       # Run PMD on HTML files
       - name: Run PMD on HTML files
+        continue-on-error: true
         run: |
           $HOME/pmd-bin-7.8.0/bin/pmd check -f text -R .github/rulesets/html.xml -d ./ 2>&1 | tee pmd-html-output.log; pstat=(${PIPESTATUS[0]})
           cat pmd-html-output.log
@@ -42,11 +43,12 @@ jobs:
 
       # Run PMD on JS files
       - name: Run PMD on JS files
+        continue-on-error: true
         run: |
           $HOME/pmd-bin-7.8.0/bin/pmd check -f text -R .github/rulesets/js.xml -d ./ 2>&1 | tee pmd-js-output.log; pstat=(${PIPESTATUS[0]})
           cat pmd-js-output.log
           if [ "$pstat" -eq 4 ]; then
-            echo "JS check failed." | tee js-fail.logl
+            echo "JS check failed." | tee js-fail.log
             exit 1
           fi
 
