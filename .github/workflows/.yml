@@ -4,19 +4,34 @@ on:
   push: # Run on all branches for push events
     branches:
       - '**'
-  pull_request: # Run on all pull request events
-    branches:
-      - '**'
 
 jobs:
   pmd-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Install Java (required for PMD)
+      - name: Set up Java
+        uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
-          java-version: '11'
-      - uses: pmd/pmd-github-action@v2
-        with:
-          rulesets: 'ruleset.xml'
+          java-version: '11' # PMD requires Java 11 or higher
+          distribution: 'temurin' # Use Eclipse Temurin as the Java distribution
+
+      # Install PMD
+      - name: Install PMD
+        run: |
+          curl -L -o pmd-bin.zip https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.8.0/pmd-dist-7.8.0-bin.zip
+          unzip pmd-bin.zip
+          sudo mv pmd-bin-7.8.0 /opt/pmd
+          echo "export PATH=/opt/pmd/bin:\$PATH" >> $GITHUB_ENV
+
+      # Run PMD on HTML files
+      - name: Run PMD on HTML files
+        run: pmd check -f text -R .github/rulesets/html.xml -d ./
+
+      # Run PMD on JS files
+      - name: Run PMD on JS files
+        run: pmd check -f text -R .github/rulesets/js.xml -d ./
