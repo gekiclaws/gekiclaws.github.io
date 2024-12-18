@@ -30,6 +30,8 @@ jobs:
           
           # Verify the installation
           $HOME/pmd-bin-7.8.0/bin/pmd --version
+          exec bash -l
+          pmd --version
 
       # Run PMD on HTML files
       - name: Run PMD on HTML files
