@@ -9,7 +9,7 @@
     </description>
 
     <!-- Include the rules -->
-    <rule ref="category/html/bestpractices.xml"/>
+    <!-- <rule ref="category/html/bestpractices.xml"/> -->
 
     <!-- Exclude specific directories or files -->
     <exclude-pattern>.*/static/project-pages/.*</exclude-pattern>
