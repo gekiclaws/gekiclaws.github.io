@@ -20,13 +20,15 @@ jobs:
           java-version: '11' # PMD requires Java 11 or higher
           distribution: 'temurin' # Use Eclipse Temurin as the Java distribution
 
-      # Install PMD
+      # Download and install PMD 7.8.0
       - name: Install PMD
         run: |
           curl -L -o pmd-bin.zip https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.8.0/pmd-dist-7.8.0-bin.zip
-          unzip pmd-bin.zip
-          sudo mv pmd-bin-7.8.0 /opt/pmd
-          echo "export PATH=$PATH:/opt/pmd/bin" >> $GITHUB_ENV
+          unzip -o pmd-bin.zip -d pmd
+          sudo mv pmd/pmd-bin-7.8.0 /opt/pmd
+          echo "/opt/pmd/bin" >> $GITHUB_PATH
+          ls -la /opt/pmd/bin # Verify PMD binaries
+          pmd -version        # Confirm PMD is installed correctly
 
       # Run PMD on HTML files
       - name: Run PMD on HTML files
