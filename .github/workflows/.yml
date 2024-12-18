@@ -36,10 +36,6 @@ jobs:
         run: |
           $HOME/pmd-bin-7.8.0/bin/pmd check -f text -R .github/rulesets/html.xml -d ./ 2>&1 | tee pmd-html-output.log
           cat pmd-html-output.log
-          if [ -s pmd-html-output.log ]; then
-            echo "PMD detected issues in HTML files."
-            exit 1
-          fi
 
       # Run PMD on JS files
       - name: Run PMD on JS files
@@ -47,10 +43,6 @@ jobs:
         run: |
           $HOME/pmd-bin-7.8.0/bin/pmd check -f text -R .github/rulesets/js.xml -d ./ 2>&1 | tee pmd-js-output.log
           cat pmd-js-output.log
-          if [ -s pmd-js-output.log ]; then
-            echo "PMD detected issues in JS files."
-            exit 1
-          fi
 
       # Final step: Fail if either stage failed
       - name: Check PMD results
@@ -65,4 +57,6 @@ jobs:
 
           if [ ! -s pmd-html-output.log ] && [ ! -s pmd-js-output.log ]; then
             echo "All PMD checks passed."
+          else
+            exit 1
           fi
