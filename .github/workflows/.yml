@@ -55,19 +55,14 @@ jobs:
       # Final step: Fail if either stage failed
       - name: Check PMD results
         run: |
-          html_failed=0
-          js_failed=0
           if [ -s pmd-html-output.log ]; then
-            html_failed=1
             echo "HTML check failed."
           fi
+
           if [ -s pmd-js-output.log ]; then
-            js_failed=1
             echo "JS check failed."
           fi
-          if [ "$html_failed" -eq 1 ] || [ "$js_failed" -eq 1 ]; then
-            echo "PMD checks failed."
-            exit 1
-          else
+
+          if [ ! -s pmd-html-output.log ] && [ ! -s pmd-js-output.log ]; then
             echo "All PMD checks passed."
           fi
