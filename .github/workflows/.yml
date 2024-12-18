@@ -26,7 +26,7 @@ jobs:
           curl -L -o pmd-bin.zip https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.8.0/pmd-dist-7.8.0-bin.zip
           unzip pmd-bin.zip
           sudo mv pmd-bin-7.8.0 /opt/pmd
-          echo "export PATH=/opt/pmd/bin:\$PATH" >> $GITHUB_ENV
+          echo "export PATH=$PATH:/opt/pmd/bin" >> $GITHUB_ENV
 
       # Run PMD on HTML files
       - name: Run PMD on HTML files
