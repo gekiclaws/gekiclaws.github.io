@@ -28,18 +28,46 @@ jobs:
           unzip pmd-dist-7.8.0-bin.zip
           
           # Verify the installation
-          alias pmd="$HOME/pmd-bin-7.8.0/bin/pmd"
-          exec bash -l
-          pmd --version
+          $HOME/pmd-bin-7.8.0/bin/pmd --version
 
       # Run PMD on HTML files
       - name: Run PMD on HTML files
+        continue-on-error: true
         run: |
           $HOME/pmd-bin-7.8.0/bin/pmd check -f text -R .github/rulesets/html.xml -d ./ 2>&1 | tee pmd-html-output.log
           cat pmd-html-output.log
+          if [ -s pmd-html-output.log ]; then
+            echo "PMD detected issues in HTML files."
+            exit 1
+          fi
 
       # Run PMD on JS files
       - name: Run PMD on JS files
+        continue-on-error: true
         run: |
           $HOME/pmd-bin-7.8.0/bin/pmd check -f text -R .github/rulesets/js.xml -d ./ 2>&1 | tee pmd-js-output.log
           cat pmd-js-output.log
+          if [ -s pmd-js-output.log ]; then
+            echo "PMD detected issues in JS files."
+            exit 1
+          fi
+
+      # Final step: Fail if either stage failed
+      - name: Check PMD results
+        run: |
+          html_failed=0
+          js_failed=0
+          if [ -s pmd-html-output.log ]; then
+            html_failed=1
+            echo "HTML check failed."
+          fi
+          if [ -s pmd-js-output.log ]; then
+            js_failed=1
+            echo "JS check failed."
+          fi
+          if [ "$html_failed" -eq 1 ] || [ "$js_failed" -eq 1 ]; then
+            echo "PMD checks failed."
+            exit 1
+          else
+            echo "All PMD checks passed."
+          fi
