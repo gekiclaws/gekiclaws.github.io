@@ -35,13 +35,11 @@ jobs:
       # Run PMD on HTML files
       - name: Run PMD on HTML files
         run: |
-          alias pmd="$HOME/pmd-bin-7.8.0/bin/pmd"
-          exec bash -l
-          pmd check -f text -R .github/rulesets/html.xml -d ./ 2>&1
+          $HOME/pmd-bin-7.8.0/bin/pmd check -f text -R .github/rulesets/html.xml -d ./ 2>&1 | tee pmd-html-output.log
+          cat pmd-html-output.log
 
       # Run PMD on JS files
       - name: Run PMD on JS files
         run: |
-          alias pmd="$HOME/pmd-bin-7.8.0/bin/pmd"
-          exec bash -l
-          pmd check -f text -R .github/rulesets/js.xml -d ./ 2>&1
+          $HOME/pmd-bin-7.8.0/bin/pmd check -f text -R .github/rulesets/js.xml -d ./ 2>&1 | tee pmd-js-output.log
+          cat pmd-js-output.log
