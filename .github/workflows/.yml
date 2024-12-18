@@ -9,19 +9,17 @@ jobs:
   pmd-check:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout the repository
+      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Run PMD
-      - name: Run PMD
-        uses: pmd/pmd-github-action@v2
-        with:
-          rulesets: 'category/html/bestpractices.xml,category/ecmascript/bestpractices.xml,category/ecmascript/performance.xml'
+      # Setup PMD
+      # TODO
 
-      # Step 3: Verify PMD results
-      - name: Check for PMD violations
-        if: failure() # This ensures the step runs only if the PMD step fails
-        run: |
-          echo "PMD violations found. Failing the build."
-          exit 1
+      # Run PMD on HTML files
+      - name: Run PMD on HTML files
+        run: pmd check -f text -R .github/rulesets/html.xml -d ./
+
+      # Run PMD on JS files
+      - name: Run PMD on JS files
+        run: pmd check -f text -R .github/rulesets/js.xml -d ./
