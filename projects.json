@@ -1,0 +1,72 @@
+[
+  {
+    "title": "ContextToCanvas",
+    "date": "2025/04/23",
+    "href": "https://github.com/gekiclaws/context2canvas",
+    "image": "./static/media/post_images/placeholder.png",
+    "summary": "A modular LLM pipeline that transforms raw structured data directly into visualizations. Includes retrieval-augmented generation, evaluation metrics, and configurable model orchestration for end-to-end automation."
+  },
+  {
+    "title": "ETH Royalty Demo",
+    "date": "2025/04/23",
+    "href": "https://github.com/gekiclaws/onchain-royalties",
+    "image": "./static/media/post_images/placeholder.png",
+    "summary": "A Solidity + Hardhat demo for splitting ETH-based music royalties between artists, collaborators, and fans. Implements tokenized supporter rewards, configurable payout weights, and full on-chain transparency with zero external dependencies."
+  },
+  {
+    "title": "Relatus",
+    "date": "2025/07/21",
+    "href": "https://github.com/gekiclaws/relatus",
+    "image": "./static/media/post_images/relatus.png",
+    "summary": "A personal relationship CRM combining a React frontend with a Spring Boot + MongoDB backend. Tracks and organizes social connections, supports authentication via JWT, and provides migration utilities for evolving data models."
+  },
+  {
+    "title": "TempFeel API",
+    "date": "2025/03/13",
+    "href": "https://github.com/gekiclaws/temp_feel",
+    "image": "./static/media/post_images/temp_feel.png",
+    "summary": "Wind chill and heat index refine temperature readings but still fail to capture real comfort. This API fills the gap by considering more environmental factors, physiological state, and clothing choices for a personalized comfort prediction."
+  },
+  {
+    "title": "Function Generator API",
+    "date": "2024/12/15",
+    "href": "https://github.com/gekiclaws/function-generator",
+    "image": "./static/media/post_images/function_generator.png",
+    "summary": "My team and I developed this API for creating LLM-powered functions to make it easier for developers to integrate LLMs into their Java programs."
+  },
+  {
+    "title": "Chessi",
+    "date": "2023/03/16",
+    "href": "https://github.com/gekiclaws/chessi",
+    "image": "./static/media/post_images/chessi.png",
+    "summary": "To help chess enthusiasts improve their chess intuition, I developed this app where users test their skills by guessing the engine's evaluation and by finding and playing the best move on the board."
+  },
+  {
+    "title": "TapSpeech",
+    "date": "2021/10/25",
+    "href": "https://tapspeech.github.io/index.html",
+    "image": "./static/media/post_images/tapspeech.jpeg",
+    "summary": "A startup I co-founded focused on improving communication between residents and caregivers in retirement homes."
+  },
+  {
+    "title": "Productivity timer extension",
+    "date": "2021/01/05",
+    "href": "https://github.com/gekiclaws/productivity-timer",
+    "image": "./static/media/post_images/productivity_timer.png",
+    "summary": "A Chrome extension that boosts productivity by splitting long study sessions into focused work and rest intervals."
+  },
+  {
+    "title": "MLA8 citation extension",
+    "date": "2020/04/14",
+    "href": "https://github.com/gekiclaws/mla-chrome-extension",
+    "image": "./static/media/post_images/mla_chrome_extension.png",
+    "summary": "A Chrome extension tailored for creating MLA8 citations for Chinese websites to ensure citation format accuracy and speed up research workflows."
+  },
+  {
+    "title": "MLA8 citation machine",
+    "date": "2018/10/12",
+    "href": "project-pages/chinese-citation-machine/webpage.html",
+    "image": "./static/media/post_images/chinese_citation_machine.png",
+    "summary": "A citation machine tailored to MLA8 rules for Chinese sources to help students cite materials correctly."
+  }
+]
