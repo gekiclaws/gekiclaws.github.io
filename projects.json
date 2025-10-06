@@ -1,10 +1,26 @@
 [
   {
+    "title": "Zero To Exam",
+    "date": "2025/07/08",
+    "href": "https://zerotoexam.vercel.app/",
+    "image": "./static/media/post_images/zerotoexam.png",
+    "summary": "An AI-driven exam-prep platform for IB students. Builds personalized practice paths, diagnoses weak spots in real time, and adapts through continuous feedback to guide students from zero to mastery.",
+    "private": false
+  },
+  {
+    "title": "Relatus",
+    "date": "2025/06/21",
+    "href": "https://github.com/gekiclaws/relatus",
+    "image": "./static/media/post_images/relatus.png",
+    "summary": "A full-stack personal CRM for relationships. Combines a React frontend with a Spring Boot + MongoDB backend to track connections, visualize interaction history, and automate follow-ups—helping users stay intentional about who matters most.",
+    "private": true
+  },
+  {
     "title": "ContextToCanvas",
     "date": "2025/04/23",
     "href": "https://github.com/gekiclaws/context2canvas",
     "image": "./static/media/post_images/placeholder.png",
-    "summary": "A modular LLM pipeline that transforms raw structured data directly into visualizations. Includes retrieval-augmented generation, evaluation metrics, and configurable model orchestration for end-to-end automation.",
+    "summary": "A modular LLM pipeline that turns raw structured data into ready-to-use visualizations. Integrates retrieval-augmented generation, evaluation metrics, and configurable orchestration for reproducible AI-assisted data storytelling.",
     "private": false
   },
   {
@@ -12,23 +28,15 @@
     "date": "2025/04/23",
     "href": "https://github.com/gekiclaws/onchain-royalties",
     "image": "./static/media/post_images/placeholder.png",
-    "summary": "A Solidity + Hardhat demo for splitting ETH-based music royalties between artists, collaborators, and fans. Implements tokenized supporter rewards, configurable payout weights, and full on-chain transparency with zero external dependencies.",
+    "summary": "A Solidity + Hardhat prototype that automates on-chain music-royalty splits between artists, collaborators, and fans. Features tokenized supporter rewards, customizable payout weights, and transparent, dependency-free ETH distribution.",
     "private": false
-  },
-  {
-    "title": "Relatus",
-    "date": "2025/07/21",
-    "href": "https://github.com/gekiclaws/relatus",
-    "image": "./static/media/post_images/relatus.png",
-    "summary": "A personal relationship CRM combining a React frontend with a Spring Boot + MongoDB backend. Tracks and organizes social connections, supports authentication via JWT, and provides migration utilities for evolving data models.",
-    "private": true
   },
   {
     "title": "TempFeel API",
     "date": "2025/03/13",
     "href": "https://github.com/gekiclaws/temp_feel",
     "image": "./static/media/post_images/temp_feel.png",
-    "summary": "Wind chill and heat index refine temperature readings but still fail to capture real comfort. This API fills the gap by considering more environmental factors, physiological state, and clothing choices for a personalized comfort prediction.",
+    "summary": "A comfort-index service that quantifies how temperature actually feels by modeling environmental factors, clothing, and physiology—offering a more human-accurate metric than simple wind-chill or heat-index formulas.",
     "private": false
   },
   {
@@ -36,7 +44,7 @@
     "date": "2024/12/15",
     "href": "https://github.com/gekiclaws/function-generator",
     "image": "./static/media/post_images/function_generator.png",
-    "summary": "My team and I developed this API for creating LLM-powered functions to make it easier for developers to integrate LLMs into their Java programs.",
+    "summary": "A developer tool that lets Java applications call LLM-powered functions natively. Simplifies integration, handles prompt orchestration, and streamlines AI feature development across enterprise backends.",
     "private": false
   },
   {
