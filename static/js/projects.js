@@ -51,6 +51,11 @@ function cardItemHTML(item, config) {
   const targetAttr = linkTarget ? ` target="${esc(linkTarget)}"` : "";
   const relValue = config.linkRel || (linkTarget === "_blank" ? "noopener" : "");
   const relAttr = relValue ? ` rel="${esc(relValue)}"` : "";
+  const isPrivate = item.private === true;
+  const linkAttrs = isPrivate
+    ? ' href="#" role="button" onclick="handlePrivateClick(event)"'
+    : ` href="${href}"${targetAttr}${relAttr}`;
+  const imageLinkAttrs = `${linkAttrs}${bgAttr}`;
 
   return `
     <div class="w-dyn-item">
@@ -58,10 +63,10 @@ function cardItemHTML(item, config) {
         <div class="post-content">
           <div class="w-row">
             <div class="w-col w-col-4 w-col-medium-4">
-              <a class="blog-image w-inline-block" href="${href}"${targetAttr}${relAttr}${bgAttr}></a>
+              <a class="blog-image w-inline-block"${imageLinkAttrs}></a>
             </div>
             <div class="w-col w-col-8 w-col-medium-8">
-              <a class="blog-title-link w-inline-block" href="${href}"${targetAttr}${relAttr}>
+              <a class="blog-title-link w-inline-block"${linkAttrs}>
                 <h2 class="blog-title">${title}</h2>
               </a>
               <div class="details-wrapper">
@@ -138,4 +143,70 @@ function initDynamicCardLists() {
   lists.forEach(list => { loadCardList(list); });
 }
 
-document.addEventListener("DOMContentLoaded", initDynamicCardLists);
+let privateModalInjected = false;
+
+function ensurePrivateModal() {
+  if (privateModalInjected) return;
+  if (document.getElementById("privateModal")) {
+    privateModalInjected = true;
+    return;
+  }
+
+  const wrapper = document.createElement("div");
+  wrapper.innerHTML = `
+    <div class="modal fade" id="privateModal" tabindex="-1" role="dialog" aria-labelledby="privateModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="privateModalLabel">Private Project</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            This project's codebase is private due to confidentiality.
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+  const modal = wrapper.firstElementChild;
+  if (modal) {
+    document.body.appendChild(modal);
+    privateModalInjected = true;
+  }
+}
+
+function showPrivateModal() {
+  ensurePrivateModal();
+
+  if (window.jQuery && typeof window.jQuery.fn.modal === "function") {
+    window.jQuery("#privateModal").modal("show");
+    return;
+  }
+
+  if (typeof window.bootstrap !== "undefined" && typeof window.bootstrap.Modal === "function") {
+    const modalEl = document.getElementById("privateModal");
+    if (modalEl) {
+      const modalInstance = window.bootstrap.Modal.getOrCreateInstance(modalEl);
+      modalInstance.show();
+      return;
+    }
+  }
+
+  alert("This project's codebase is private due to confidentiality.");
+}
+
+function handlePrivateClick(event) {
+  if (event && typeof event.preventDefault === "function") {
+    event.preventDefault();
+  }
+  showPrivateModal();
+}
+
+window.handlePrivateClick = handlePrivateClick;
+
+document.addEventListener("DOMContentLoaded", () => {
+  ensurePrivateModal();
+  initDynamicCardLists();
+});
