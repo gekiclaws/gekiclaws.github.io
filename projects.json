@@ -2,15 +2,17 @@
   {
     "title": "Zero To Exam",
     "date": "2025/07/08",
-    "href": "https://zerotoexam.vercel.app/",
+    "website": "https://zerotoexam.vercel.app/",
+    "href": "",
     "image": "./static/media/post_images/zerotoexam.png",
     "summary": "An AI-driven exam-prep platform for IB students. Builds personalized practice paths, diagnoses weak spots in real time, and adapts through continuous feedback to guide students from zero to mastery.",
-    "private": false
+    "private": true
   },
   {
     "title": "Relatus",
     "date": "2025/06/21",
-    "href": "https://github.com/gekiclaws/relatus",
+    "website": "",
+    "href": "",
     "image": "./static/media/post_images/relatus.png",
     "summary": "A full-stack personal CRM for relationships. Combines a React frontend with a Spring Boot + MongoDB backend to track connections, visualize interaction history, and automate follow-ups—helping users stay intentional about who matters most.",
     "private": true
@@ -18,6 +20,7 @@
   {
     "title": "ContextToCanvas",
     "date": "2025/04/23",
+    "website": "",
     "href": "https://github.com/gekiclaws/context2canvas",
     "image": "./static/media/post_images/placeholder.png",
     "summary": "A modular LLM pipeline that turns raw structured data into ready-to-use visualizations. Integrates retrieval-augmented generation, evaluation metrics, and configurable orchestration for reproducible AI-assisted data storytelling.",
@@ -26,6 +29,7 @@
   {
     "title": "ETH Royalty Demo",
     "date": "2025/04/23",
+    "website": "",
     "href": "https://github.com/gekiclaws/onchain-royalties",
     "image": "./static/media/post_images/placeholder.png",
     "summary": "A Solidity + Hardhat prototype that automates on-chain music-royalty splits between artists, collaborators, and fans. Features tokenized supporter rewards, customizable payout weights, and transparent, dependency-free ETH distribution.",
@@ -34,6 +38,7 @@
   {
     "title": "TempFeel API",
     "date": "2025/03/13",
+    "website": "",
     "href": "https://github.com/gekiclaws/temp_feel",
     "image": "./static/media/post_images/temp_feel.png",
     "summary": "A comfort-index service that quantifies how temperature actually feels by modeling environmental factors, clothing, and physiology—offering a more human-accurate metric than simple wind-chill or heat-index formulas.",
@@ -42,6 +47,7 @@
   {
     "title": "Function Generator API",
     "date": "2024/12/15",
+    "website": "",
     "href": "https://github.com/gekiclaws/function-generator",
     "image": "./static/media/post_images/function_generator.png",
     "summary": "A developer tool that lets Java applications call LLM-powered functions natively. Simplifies integration, handles prompt orchestration, and streamlines AI feature development across enterprise backends.",
@@ -50,6 +56,7 @@
   {
     "title": "Chessi",
     "date": "2023/03/16",
+    "website": "",
     "href": "https://github.com/gekiclaws/chessi",
     "image": "./static/media/post_images/chessi.png",
     "summary": "To help chess enthusiasts improve their chess intuition, I developed this app where users test their skills by guessing the engine's evaluation and by finding and playing the best move on the board.",
@@ -58,14 +65,16 @@
   {
     "title": "TapSpeech",
     "date": "2021/10/25",
-    "href": "https://tapspeech.github.io/index.html",
+    "website": "https://tapspeech.github.io/index.html",
+    "href": "",
     "image": "./static/media/post_images/tapspeech.jpeg",
     "summary": "A startup I co-founded focused on improving communication between residents and caregivers in retirement homes.",
-    "private": false
+    "private": true
   },
   {
     "title": "Productivity timer extension",
     "date": "2021/01/05",
+    "website": "",
     "href": "https://github.com/gekiclaws/productivity-timer",
     "image": "./static/media/post_images/productivity_timer.png",
     "summary": "A Chrome extension that boosts productivity by splitting long study sessions into focused work and rest intervals.",
@@ -74,6 +83,7 @@
   {
     "title": "MLA8 citation extension",
     "date": "2020/04/14",
+    "website": "",
     "href": "https://github.com/gekiclaws/mla-chrome-extension",
     "image": "./static/media/post_images/mla_chrome_extension.png",
     "summary": "A Chrome extension tailored for creating MLA8 citations for Chinese websites to ensure citation format accuracy and speed up research workflows.",
@@ -82,7 +92,8 @@
   {
     "title": "MLA8 citation machine",
     "date": "2018/10/12",
-    "href": "project-pages/chinese-citation-machine/webpage.html",
+    "website": "static/project-pages/chinese-citation-machine/webpage.html",
+    "href": "",
     "image": "./static/media/post_images/chinese_citation_machine.png",
     "summary": "A citation machine tailored to MLA8 rules for Chinese sources to help students cite materials correctly.",
     "private": false

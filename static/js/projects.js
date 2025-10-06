@@ -40,7 +40,74 @@ function setError(el, msg) {
   `;
 }
 
-function cardItemHTML(item, config) {
+function projectButtonsHTML(item, titleText) {
+  const buttons = [];
+  const website = (item.website || "").trim();
+  const href = (item.href || "").trim();
+  const isPrivate = item.private === true;
+  const hasHref = Boolean(href);
+
+  if (website) {
+    const aria = esc(`View website for ${titleText}`);
+    buttons.push(
+      `<a class="btn btn-primary btn-sm mr-2 mb-2" href="${esc(website)}" target="_blank" rel="noopener" aria-label="${aria}">View Website</a>`
+    );
+  }
+
+  if (isPrivate) {
+    const aria = esc(`Learn why ${titleText} codebase is private`);
+    buttons.push(
+      `<button type="button" class="btn btn-outline-secondary btn-sm mr-2 mb-2" onclick="handlePrivateClick(event)" aria-label="${aria}">Private Codebase</button>`
+    );
+  }
+  
+  if (hasHref) {
+    const aria = esc(`View codebase for ${titleText}`);
+    buttons.push(
+      `<a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="${esc(href)}" target="_blank" rel="noopener" aria-label="${aria}">View Codebase</a>`
+    );
+  }
+
+  if (buttons.length === 0) return "";
+
+  return `<div class="mt-3 d-flex flex-wrap">${buttons.join("")}</div>`;
+}
+
+function projectCardHTML(item, config) {
+  const bgAttr = item.image ? ` style="background-image: url('${esc(item.image)}');"` : "";
+  const title = esc(item.title);
+  const date = fmtDateYMD(item.date);
+  const summary = esc(item.summary);
+  const summaryTag = safeTagName(config.summaryTag || "h4");
+  const buttons = projectButtonsHTML(item, item.title || "");
+
+  return `
+    <div class="w-dyn-item">
+      <div class="post-wrapper">
+        <div class="post-content">
+          <div class="w-row">
+            <div class="w-col w-col-4 w-col-medium-4">
+              <div class="blog-image w-inline-block"${bgAttr}></div>
+            </div>
+            <div class="w-col w-col-8 w-col-medium-8">
+              <div class="blog-title-link w-inline-block">
+                <h2 class="blog-title">${title}</h2>
+              </div>
+              <div class="details-wrapper">
+                <div class="post-info">Posted: ${date}</div>
+              </div>
+              <div class="post-summary-wrapper">
+                <${summaryTag} class="post-summary">${summary}</${summaryTag}>
+              </div>
+              ${buttons}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function defaultCardHTML(item, config) {
   const bgAttr = item.image ? ` style="background-image: url('${esc(item.image)}');"` : "";
   const href = esc(item.href);
   const title = esc(item.title);
@@ -51,11 +118,6 @@ function cardItemHTML(item, config) {
   const targetAttr = linkTarget ? ` target="${esc(linkTarget)}"` : "";
   const relValue = config.linkRel || (linkTarget === "_blank" ? "noopener" : "");
   const relAttr = relValue ? ` rel="${esc(relValue)}"` : "";
-  const isPrivate = item.private === true;
-  const linkAttrs = isPrivate
-    ? ' href="#" role="button" onclick="handlePrivateClick(event)"'
-    : ` href="${href}"${targetAttr}${relAttr}`;
-  const imageLinkAttrs = `${linkAttrs}${bgAttr}`;
 
   return `
     <div class="w-dyn-item">
@@ -63,10 +125,10 @@ function cardItemHTML(item, config) {
         <div class="post-content">
           <div class="w-row">
             <div class="w-col w-col-4 w-col-medium-4">
-              <a class="blog-image w-inline-block"${imageLinkAttrs}></a>
+              <a class="blog-image w-inline-block" href="${href}"${targetAttr}${relAttr}${bgAttr}></a>
             </div>
             <div class="w-col w-col-8 w-col-medium-8">
-              <a class="blog-title-link w-inline-block"${linkAttrs}>
+              <a class="blog-title-link w-inline-block" href="${href}"${targetAttr}${relAttr}>
                 <h2 class="blog-title">${title}</h2>
               </a>
               <div class="details-wrapper">
@@ -82,6 +144,13 @@ function cardItemHTML(item, config) {
     </div>`;
 }
 
+function cardItemHTML(item, config) {
+  if (config.template === "project") {
+    return projectCardHTML(item, config);
+  }
+  return defaultCardHTML(item, config);
+}
+
 function getConfig(el) {
   return {
     source: el.dataset.cardSource,
@@ -90,8 +159,25 @@ function getConfig(el) {
     linkRel: el.dataset.cardLinkRel,
     loadingText: el.dataset.cardLoadingText,
     emptyText: el.dataset.cardEmptyText,
-    sort: (el.dataset.cardSort || "desc").toLowerCase()
+    sort: (el.dataset.cardSort || "desc").toLowerCase(),
+    template: (el.dataset.cardTemplate || "default").toLowerCase()
   };
+}
+
+function isValidCardItem(item, template) {
+  try {
+    if (!item || !item.title || !item.summary || !item.date || !item.image) {
+      return false;
+    }
+    parseYMD(item.date);
+    if (template !== "project" && !item.href) {
+      return false;
+    }
+    return true;
+  } catch (err) {
+    console.warn("Skipping invalid item", item, err);
+    return false;
+  }
 }
 
 function sortItems(items, direction) {
@@ -114,16 +200,12 @@ async function loadCardList(el) {
   try {
     const res = await fetch(config.source, { cache: "no-cache" });
     if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-    const items = await res.json();
+    const data = await res.json();
+    if (!Array.isArray(data)) {
+      throw new Error("Unexpected response payload");
+    }
 
-    const valid = items.filter(item => {
-      try {
-        return item && item.title && item.href && item.summary && parseYMD(item.date);
-      } catch (err) {
-        console.warn("Skipping invalid item", item, err);
-        return false;
-      }
-    });
+    const valid = data.filter(item => isValidCardItem(item, config.template));
 
     const sorted = sortItems(valid, config.sort);
 
@@ -134,7 +216,9 @@ async function loadCardList(el) {
 
     el.innerHTML = sorted.map(item => cardItemHTML(item, config)).join("");
   } catch (err) {
-    setError(el, `Failed to load cards: ${err.message || err}`);
+    const message = `Failed to load cards: ${err.message || err}`;
+    setError(el, message);
+    alert(message);
   }
 }
 
@@ -154,7 +238,7 @@ function ensurePrivateModal() {
 
   const wrapper = document.createElement("div");
   wrapper.innerHTML = `
-    <div class="modal fade" id="privateModal" tabindex="-1" role="dialog" aria-labelledby="privateModalLabel" aria-hidden="true">
+    <div class="modal fade" id="privateModal" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="privateModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -165,6 +249,9 @@ function ensurePrivateModal() {
           </div>
           <div class="modal-body">
             This project's codebase is private due to confidentiality.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
