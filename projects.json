@@ -38,7 +38,7 @@
   {
     "title": "TempFeel API",
     "date": "2025/03/13",
-    "website": "",
+    "website": "https://temp-feel.vercel.app/",
     "href": "https://github.com/gekiclaws/temp_feel",
     "image": "./static/media/post_images/temp_feel.png",
     "summary": "A comfort-index service that quantifies how temperature actually feels by modeling environmental factors, clothing, and physiology—offering a more human-accurate metric than simple wind-chill or heat-index formulas.",
