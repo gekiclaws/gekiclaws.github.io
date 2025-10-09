@@ -23,7 +23,7 @@
     "website": "https://relatus.vercel.app/",
     "href": "",
     "image": "./static/media/post_images/relatus.png",
-    "summary": "A full-stack personal CRM for relationships. Combines a React frontend with a Spring Boot + MongoDB backend to track connections, visualize interaction history, and automate follow-ups—helping users stay intentional about who matters most.",
+    "summary": "A full-stack personal CRM for relationships. Combines a React frontend with a Spring Boot + MongoDB backend to track connections, visualize interaction history, and automate follow-ups. This helps users stay intentional about who matters most.",
     "private": true
   },
   {
@@ -50,7 +50,7 @@
     "website": "https://temp-feel.vercel.app/",
     "href": "https://github.com/gekiclaws/temp_feel",
     "image": "./static/media/post_images/temp_feel.png",
-    "summary": "A comfort-index service that quantifies how temperature actually feels by modeling environmental factors, clothing, and physiology—offering a more human-accurate metric than simple wind-chill or heat-index formulas.",
+    "summary": "A comfort-index service that quantifies how temperature actually feels by modeling environmental factors, clothing, and physiology. This aims to offer a more human-accurate metric than simple wind-chill or heat-index formulas.",
     "private": false
   },
   {
