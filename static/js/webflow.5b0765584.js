@@ -719,39 +719,7 @@
 			var brandingText = 'Copyright © ' + year + ' Matthew Wong';
 
 			api.ready = function () {
-				var doBranding = $html.attr('data-wf-status');
-				var publishedDomain = $html.attr('data-wf-domain') || '';
-
-				var $branding = $('<div></div>');
-				var $link = $('<a></a>');
-
-				$branding.css({
-					position: 'fixed',
-					bottom: 0,
-					right: 0,
-					zIndex: 2147483647,
-					borderTopLeftRadius: '5px',
-					backgroundColor: '#3B5988',
-					padding: '8px 12px 5px 15px',
-					fontFamily: 'Courier New',
-					fontSize: '12px',
-					textTransform: 'uppercase',
-					opacity: '0',
-					transition: 'opacity 0.50s ease-in-out'
-				});
-
-				$link.css({
-					color: 'white',
-					textDecoration: 'none'
-				});
-
-				$branding.text(brandingText);
-				$link.append($branding);
-				$body.append($link);
-
-				$branding.css({
-					opacity: '1.0'
-				});
+				// Branding overlay removed per portfolio update; keep module for compatibility.
 			};
 
 			// Export module
