@@ -13,7 +13,7 @@
   <script src="./static/js/loadHTML.js"></script>
 </head>
 <body>
-  <div data-include-html="./static/html/navbar.html"></div>
+  <div data-include-html="/static/html/navbar.html"></div>
 
   <div class="content-wrapper">
     <div class="w-container">
@@ -23,12 +23,14 @@
         <div class="content-column w-col w-col-9">
           <div class="w-dyn-list">
             <div class="w-dyn-items" id="projects-list"
-              data-card-source="./projects.json"
+              data-card-source="/projects.json"
               data-card-summary-tag="h4"
               data-card-link-target="_blank"
               data-card-empty-text="No projects to display."
               data-card-loading-text="Loading projects..."
-              data-card-sort="desc"
+              data-card-sort="priority-asc"
+              data-card-filter-priority-lt="99"
+              data-card-date-format="month-year"
               data-card-template="project">
             </div>
           </div>

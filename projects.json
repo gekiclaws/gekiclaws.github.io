@@ -1,109 +1,130 @@
 [
   {
+    "title": "Beeper – MS Teams ↔ Matrix Bridge",
+    "date": "2026/02/14",
+    "priority": 1,
+    "href": "https://github.com/gekiclaws/mautrix-teams",
+    "image": "/static/media/post_images/beeper.png",
+    "summary": "Shipped a production-ready Matrix–MS Teams bridge for use in Beeper. Reverse-engineered undocumented Teams web APIs to enable full-fidelity cross-platform messaging.",
+    "private": false
+  },
+  {
     "title": "Santorini",
     "date": "2024/04/25",
+    "priority": 99,
     "website": "https://santorini-nine.vercel.app/",
     "href": "",
-    "image": "./static/media/post_images/santorini.png",
+    "image": "/static/media/post_images/santorini.png",
     "summary": "Full-stack Santorini web app. TypeScript + React client for the board interface, backed by a Java (NanoHTTPD) engine managing worker placement, god-card powers, and real-time turn sequencing.",
     "private": true
   },
   {
     "title": "Zero To Exam",
     "date": "2025/07/08",
+    "priority": 99,
     "website": "https://zerotoexam.vercel.app/",
-    "href": "",
-    "image": "./static/media/post_images/zerotoexam.png",
+    "href": "https://github.com/gekiclaws/zerotoexam",
+    "image": "/static/media/post_images/zerotoexam.png",
     "summary": "An AI-driven exam-prep platform for IB students. Builds personalized practice paths, diagnoses weak spots in real time, and adapts through continuous feedback to guide students from zero to mastery.",
-    "private": true
+    "private": false
   },
   {
     "title": "Relatus",
     "date": "2025/06/21",
+    "priority": 2,
     "website": "https://relatus.vercel.app/",
     "href": "",
-    "image": "./static/media/post_images/relatus.png",
-    "summary": "A full-stack personal CRM for relationships. Combines a React frontend with a Spring Boot + MongoDB backend to track connections, visualize interaction history, and automate follow-ups. This helps users stay intentional about who matters most.",
+    "image": "/static/media/post_images/relatus.png",
+    "summary": "Designed and deployed a full-stack relationship management system (React + Spring Boot + MongoDB). Architected REST APIs, scoring logic, and portable persistence with Dockerized deployment.",
     "private": true
   },
   {
     "title": "ContextToCanvas",
     "date": "2025/04/23",
+    "priority": 3,
     "website": "",
     "href": "https://github.com/gekiclaws/context2canvas",
-    "image": "./static/media/post_images/placeholder.png",
-    "summary": "A modular LLM pipeline that turns raw structured data into ready-to-use visualizations. Integrates retrieval-augmented generation, evaluation metrics, and configurable orchestration for reproducible AI-assisted data storytelling.",
+    "image": "/static/media/post_images/placeholder.png",
+    "summary": "Built a modular RAG pipeline that generates executable visualizations from structured datasets. Implemented AST sanitization and deterministic orchestration to improve reliability and reproducibility.",
     "private": false
   },
   {
     "title": "ETH Royalty Demo",
     "date": "2025/04/23",
+    "priority": 99,
     "website": "",
     "href": "https://github.com/gekiclaws/onchain-royalties",
-    "image": "./static/media/post_images/placeholder.png",
-    "summary": "A Solidity + Hardhat prototype that automates on-chain music-royalty splits between artists, collaborators, and fans. Features tokenized supporter rewards, customizable payout weights, and transparent, dependency-free ETH distribution.",
+    "image": "/static/media/post_images/placeholder.png",
+    "summary": "Built a Solidity-based royalty distribution system using Hardhat for automated on-chain payout splitting. Implemented customizable weight allocation and dependency-free ETH distribution logic.",
     "private": false
   },
   {
     "title": "TempFeel API",
     "date": "2025/03/13",
+    "priority": 5,
     "website": "https://temp-feel.vercel.app/",
     "href": "https://github.com/gekiclaws/temp_feel",
-    "image": "./static/media/post_images/temp_feel.png",
-    "summary": "A comfort-index service that quantifies how temperature actually feels by modeling environmental factors, clothing, and physiology. This aims to offer a more human-accurate metric than simple wind-chill or heat-index formulas.",
+    "image": "/static/media/post_images/temp_feel.png",
+    "summary": "Developed a modular comfort-index modeling service for perceived temperature estimation. Designed extensible environmental factor modeling beyond standard heat-index formulas.",
     "private": false
   },
   {
     "title": "Function Generator API",
     "date": "2024/12/15",
+    "priority": 4,
     "website": "",
     "href": "https://github.com/gekiclaws/function-generator",
-    "image": "./static/media/post_images/function_generator.png",
-    "summary": "A developer tool that lets Java applications call LLM-powered functions natively. Simplifies integration, handles prompt orchestration, and streamlines AI feature development across enterprise backends.",
+    "image": "/static/media/post_images/function_generator.png",
+    "summary": "Created a Java library that converts structured test cases into type-safe LLM-backed functions. Implemented schema validation and resilient HTTP wrappers for backend AI integration.",
     "private": false
   },
   {
     "title": "Chessi",
     "date": "2023/03/16",
+    "priority": 99,
     "website": "",
     "href": "https://github.com/gekiclaws/chessi",
-    "image": "./static/media/post_images/chessi.png",
+    "image": "/static/media/post_images/chessi.png",
     "summary": "To help chess enthusiasts improve their chess intuition, I developed this app where users test their skills by guessing the engine's evaluation and by finding and playing the best move on the board.",
     "private": false
   },
   {
     "title": "TapSpeech",
     "date": "2021/10/25",
+    "priority": 99,
     "website": "https://tapspeech.github.io/index.html",
-    "href": "",
-    "image": "./static/media/post_images/tapspeech.jpeg",
+    "href": "https://github.com/tapspeech/tapspeech",
+    "image": "/static/media/post_images/tapspeech.jpeg",
     "summary": "A startup I co-founded focused on improving communication between residents and caregivers in retirement homes.",
-    "private": true
+    "private": false
   },
   {
     "title": "Productivity timer extension",
     "date": "2021/01/05",
+    "priority": 99,
     "website": "",
     "href": "https://github.com/gekiclaws/productivity-timer",
-    "image": "./static/media/post_images/productivity_timer.png",
+    "image": "/static/media/post_images/productivity_timer.png",
     "summary": "A Chrome extension that boosts productivity by splitting long study sessions into focused work and rest intervals.",
     "private": false
   },
   {
     "title": "MLA8 citation extension",
     "date": "2020/04/14",
+    "priority": 99,
     "website": "",
     "href": "https://github.com/gekiclaws/mla-chrome-extension",
-    "image": "./static/media/post_images/mla_chrome_extension.png",
+    "image": "/static/media/post_images/mla_chrome_extension.png",
     "summary": "A Chrome extension tailored for creating MLA8 citations for Chinese websites to ensure citation format accuracy and speed up research workflows.",
     "private": false
   },
   {
     "title": "MLA8 citation machine",
     "date": "2018/10/12",
-    "website": "static/project-pages/chinese-citation-machine/webpage.html",
+    "priority": 99,
+    "website": "/static/project-pages/chinese-citation-machine/webpage.html",
     "href": "",
-    "image": "./static/media/post_images/chinese_citation_machine.png",
+    "image": "/static/media/post_images/chinese_citation_machine.png",
     "summary": "A citation machine tailored to MLA8 rules for Chinese sources to help students cite materials correctly.",
     "private": false
   }

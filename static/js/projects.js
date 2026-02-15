@@ -14,6 +14,17 @@ function fmtDateYMD(s) {
   return `${months[dt.getMonth()]} ${day}, ${dt.getFullYear()}`;
 }
 
+function fmtDateMonthYear(s) {
+  const dt = parseYMD(s);
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  return `${months[dt.getMonth()]} ${dt.getFullYear()}`;
+}
+
+function fmtDate(s, format) {
+  if ((format || "").toLowerCase() === "month-year") return fmtDateMonthYear(s);
+  return fmtDateYMD(s);
+}
+
 function esc(s) {
   const div = document.createElement("div");
   div.textContent = s == null ? "" : String(s);
@@ -53,13 +64,6 @@ function projectButtonsHTML(item, titleText) {
       `<a class="btn btn-primary btn-sm mr-2 mb-2" href="${esc(website)}" target="_blank" rel="noopener" aria-label="${aria}">View Website</a>`
     );
   }
-
-  if (isPrivate) {
-    const aria = esc(`Learn why ${titleText} codebase is private`);
-    buttons.push(
-      `<button type="button" class="btn btn-outline-secondary btn-sm mr-2 mb-2" onclick="handlePrivateClick(event)" aria-label="${aria}">Private Codebase</button>`
-    );
-  }
   
   if (hasHref) {
     const aria = esc(`View codebase for ${titleText}`);
@@ -76,7 +80,7 @@ function projectButtonsHTML(item, titleText) {
 function projectCardHTML(item, config) {
   const bgAttr = item.image ? ` style="background-image: url('${esc(item.image)}');"` : "";
   const title = esc(item.title);
-  const date = fmtDateYMD(item.date);
+  const date = fmtDate(item.date, config.dateFormat);
   const summary = esc(item.summary);
   const summaryTag = safeTagName(config.summaryTag || "h4");
   const buttons = projectButtonsHTML(item, item.title || "");
@@ -94,7 +98,7 @@ function projectCardHTML(item, config) {
                 <h2 class="blog-title">${title}</h2>
               </div>
               <div class="details-wrapper">
-                <div class="post-info">Posted: ${date}</div>
+                <div class="post-info">${date}</div>
               </div>
               <div class="post-summary-wrapper">
                 <${summaryTag} class="post-summary">${summary}</${summaryTag}>
@@ -111,7 +115,7 @@ function defaultCardHTML(item, config) {
   const bgAttr = item.image ? ` style="background-image: url('${esc(item.image)}');"` : "";
   const href = esc(item.href);
   const title = esc(item.title);
-  const date = fmtDateYMD(item.date);
+  const date = fmtDate(item.date, config.dateFormat);
   const summary = esc(item.summary);
   const summaryTag = safeTagName(config.summaryTag || "h4");
   const linkTarget = config.linkTarget;
@@ -132,7 +136,7 @@ function defaultCardHTML(item, config) {
                 <h2 class="blog-title">${title}</h2>
               </a>
               <div class="details-wrapper">
-                <div class="post-info">Posted: ${date}</div>
+                <div class="post-info">${date}</div>
               </div>
               <div class="post-summary-wrapper">
                 <${summaryTag} class="post-summary">${summary}</${summaryTag}>
@@ -160,7 +164,9 @@ function getConfig(el) {
     loadingText: el.dataset.cardLoadingText,
     emptyText: el.dataset.cardEmptyText,
     sort: (el.dataset.cardSort || "desc").toLowerCase(),
-    template: (el.dataset.cardTemplate || "default").toLowerCase()
+    template: (el.dataset.cardTemplate || "default").toLowerCase(),
+    dateFormat: (el.dataset.cardDateFormat || "").toLowerCase(),
+    filterPriorityLt: el.dataset.cardFilterPriorityLt
   };
 }
 
@@ -170,6 +176,9 @@ function isValidCardItem(item, template) {
       return false;
     }
     parseYMD(item.date);
+    if (template === "project") {
+      if (typeof item.priority !== "number" || Number.isNaN(item.priority)) return false;
+    }
     if (template !== "project" && !item.href) {
       return false;
     }
@@ -182,10 +191,19 @@ function isValidCardItem(item, template) {
 
 function sortItems(items, direction) {
   if (direction === "none") return items;
-  if (direction === "asc") {
-    return [...items].sort((a, b) => parseYMD(a.date) - parseYMD(b.date));
+  if (direction === "priority-asc") {
+    return [...items].sort((a, b) => (a.priority - b.priority));
   }
+  if (direction === "asc") return [...items].sort((a, b) => parseYMD(a.date) - parseYMD(b.date));
   return [...items].sort((a, b) => parseYMD(b.date) - parseYMD(a.date));
+}
+
+function filterItems(items, config) {
+  const ltRaw = config.filterPriorityLt;
+  if (!ltRaw) return items;
+  const lt = Number(ltRaw);
+  if (!Number.isFinite(lt)) return items;
+  return items.filter(it => typeof it.priority === "number" && it.priority < lt);
 }
 
 async function loadCardList(el) {
@@ -207,7 +225,8 @@ async function loadCardList(el) {
 
     const valid = data.filter(item => isValidCardItem(item, config.template));
 
-    const sorted = sortItems(valid, config.sort);
+    const filtered = filterItems(valid, config);
+    const sorted = sortItems(filtered, config.sort);
 
     if (sorted.length === 0) {
       setEmpty(el, config.emptyText || "No items to display.");
@@ -227,73 +246,6 @@ function initDynamicCardLists() {
   lists.forEach(list => { loadCardList(list); });
 }
 
-let privateModalInjected = false;
-
-function ensurePrivateModal() {
-  if (privateModalInjected) return;
-  if (document.getElementById("privateModal")) {
-    privateModalInjected = true;
-    return;
-  }
-
-  const wrapper = document.createElement("div");
-  wrapper.innerHTML = `
-    <div class="modal fade" id="privateModal" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="privateModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="privateModalLabel">Private Project</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            This project's codebase is private due to confidentiality.
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>`;
-
-  const modal = wrapper.firstElementChild;
-  if (modal) {
-    document.body.appendChild(modal);
-    privateModalInjected = true;
-  }
-}
-
-function showPrivateModal() {
-  ensurePrivateModal();
-
-  if (window.jQuery && typeof window.jQuery.fn.modal === "function") {
-    window.jQuery("#privateModal").modal("show");
-    return;
-  }
-
-  if (typeof window.bootstrap !== "undefined" && typeof window.bootstrap.Modal === "function") {
-    const modalEl = document.getElementById("privateModal");
-    if (modalEl) {
-      const modalInstance = window.bootstrap.Modal.getOrCreateInstance(modalEl);
-      modalInstance.show();
-      return;
-    }
-  }
-
-  alert("This project's codebase is private due to confidentiality.");
-}
-
-function handlePrivateClick(event) {
-  if (event && typeof event.preventDefault === "function") {
-    event.preventDefault();
-  }
-  showPrivateModal();
-}
-
-window.handlePrivateClick = handlePrivateClick;
-
 document.addEventListener("DOMContentLoaded", () => {
-  ensurePrivateModal();
   initDynamicCardLists();
 });
