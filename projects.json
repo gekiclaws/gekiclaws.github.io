@@ -31,8 +31,8 @@
   {
     "title": "Relatus",
     "date": "2025/06/21",
-    "priority": 2,
-    "website": "https://relatus.vercel.app/",
+    "priority": 99,
+    "website": "",
     "href": "",
     "image": "/static/media/post_images/relatus.png",
     "summary": "Designed and deployed a full-stack relationship management system (React + Spring Boot + MongoDB). Architected REST APIs, scoring logic, and portable persistence with Dockerized deployment.",
@@ -59,7 +59,7 @@
     "private": false
   },
   {
-    "title": "TempFeel API",
+    "title": "TempFeel",
     "date": "2025/03/13",
     "priority": 5,
     "website": "https://temp-feel.vercel.app/",
