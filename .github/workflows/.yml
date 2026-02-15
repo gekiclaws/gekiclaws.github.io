@@ -1,63 +1,65 @@
 name: PMD Static Analysis
 
 on:
-  push: # Run on all branches for push events
+  push:
     branches:
       - '**'
 
 jobs:
   pmd-check:
     runs-on: ubuntu-latest
+
     steps:
-      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Install Java (required for PMD)
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          java-version: '21' # PMD requires Java 11 or higher
-          distribution: 'temurin' # Use Eclipse Temurin as the Java distribution
+          java-version: '21'
+          distribution: 'temurin'
 
-      # Download and install PMD 7.8.0
-      - name: Install PMD
+      - name: Install PMD 7.8.0
         run: |
-          cd $HOME
-          curl -OL https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.8.0/pmd-dist-7.8.0-bin.zip
-          unzip pmd-dist-7.8.0-bin.zip
-          
-          # Verify the installation
-          $HOME/pmd-bin-7.8.0/bin/pmd --version
+          curl -sL https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.8.0/pmd-dist-7.8.0-bin.zip -o pmd.zip
+          unzip -q pmd.zip
+          echo "$PWD/pmd-bin-7.8.0/bin" >> $GITHUB_PATH
+          pmd --version
 
-      # Run PMD on HTML files
       - name: Run PMD on HTML files
-        continue-on-error: true
+        id: html
         run: |
-          $HOME/pmd-bin-7.8.0/bin/pmd check -f text -R .github/rulesets/html.xml -d ./ 2>&1 | tee pmd-html-output.log; pstat=(${PIPESTATUS[0]})
-          cat pmd-html-output.log
-          if [ "$pstat" -eq 4 ]; then
-            echo "HTML check failed." | tee html-fail.log
-            exit 1
-          fi
+          set +e
+          pmd check \
+            -f text \
+            -R .github/rulesets/html.xml \
+            -d . \
+            --exclude node_modules/** \
+            --exclude .git/**
 
-      # Run PMD on JS files
+          echo "exit_code=$?" >> $GITHUB_OUTPUT
+          exit 0
+
       - name: Run PMD on JS files
-        continue-on-error: true
+        id: js
         run: |
-          $HOME/pmd-bin-7.8.0/bin/pmd check -f text -R .github/rulesets/js.xml -d ./ 2>&1 | tee pmd-js-output.log; pstat=(${PIPESTATUS[0]})
-          cat pmd-js-output.log
-          if [ "$pstat" -eq 4 ]; then
-            echo "JS check failed." | tee js-fail.log
+          set +e
+          pmd check \
+            -f text \
+            -R .github/rulesets/js.xml \
+            -d . \
+            --exclude node_modules/** \
+            --exclude .git/**
+
+          echo "exit_code=$?" >> $GITHUB_OUTPUT
+          exit 0
+
+      - name: Evaluate PMD results
+        run: |
+          if [ "${{ steps.html.outputs.exit_code }}" -eq 4 ] || \
+             [ "${{ steps.js.outputs.exit_code }}" -eq 4 ]; then
+            echo "PMD violations detected."
             exit 1
           fi
 
-      # Final step: Fail if either stage failed
-      - name: Check PMD results
-        run: |
-          if [ html-fail.log ] || [ js-fail.log ]; then
-            echo "PMD checks failed. Please revise your code."
-            exit 1
-          else
-            echo "All PMD checks passed."
-          fi
+          echo "All PMD checks passed."
