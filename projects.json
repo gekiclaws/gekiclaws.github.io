@@ -1,11 +1,12 @@
 [
   {
-    "title": "MS Teams ↔ Matrix Bridge",
+    "title": "Matrix ↔ MS Teams Bridge",
     "date": "2026/02/14",
     "priority": 1,
+    "website": "https://blog.beeper.com/2025/10/28/build-a-beeper-bridge/",
     "href": "https://github.com/gekiclaws/mautrix-teams",
     "image": "/static/media/post_images/beeper.png",
-    "summary": "Shipped a production-ready Matrix–MS Teams bridge for use in Beeper. Reverse-engineered undocumented Teams web APIs to enable full-fidelity cross-platform messaging.",
+    "summary": "Shipped a production-ready Matrix–MS Teams bridge for the Beeper ecosystem, reverse-engineering undocumented Teams web APIs to enable full-fidelity cross-platform messaging. The implementation is referenced in the Beeper engineering blog.",
     "private": false
   },
   {
